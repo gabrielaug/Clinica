@@ -40,10 +40,16 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Basicas\Agendamento.cs" />
+    <Compile Include="Basicas\Atendimento.cs" />
+    <Compile Include="Basicas\Convenio.cs" />
     <Compile Include="Basicas\Paciente.cs" />
+    <Compile Include="Basicas\PreCadastro.cs" />
+    <Compile Include="Basicas\Prestador.cs" />
+    <Compile Include="Basicas\Procedimento.cs" />
     <Compile Include="Basicas\TipoConsulta.cs" />
     <Compile Include="Basicas\Usuario.cs" />
     <Compile Include="conexao\ConexaoSqlServer.cs" />
