@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="Basicas\Agendamento.cs" />
     <Compile Include="Basicas\Paciente.cs" />
-    <Compile Include="Basicas\PreCadastro.cs" />
     <Compile Include="Basicas\TipoConsulta.cs" />
     <Compile Include="Basicas\Usuario.cs" />
     <Compile Include="conexao\ConexaoSqlServer.cs" />

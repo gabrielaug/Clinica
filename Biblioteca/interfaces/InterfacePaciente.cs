@@ -14,7 +14,7 @@ namespace Biblioteca.interfaces
 
         void Alterar(Paciente paciente);
 
-        List<Paciente> ListaPaciente();
+        List<Paciente> ListaPaciente(Paciente filtro);
 
     }
 }

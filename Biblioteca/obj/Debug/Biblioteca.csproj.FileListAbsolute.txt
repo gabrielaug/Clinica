@@ -1,0 +1,2 @@
+C:\Users\Gabriel Augusto\Documents\GitHub\Clinica\Biblioteca\obj\Debug\Biblioteca.csprojAssemblyReference.cache
+C:\Users\Gabriel Augusto\Documents\GitHub\Clinica\Biblioteca\obj\Debug\Biblioteca.csproj.CoreCompileInputs.cache
