@@ -18,6 +18,15 @@ namespace Biblioteca.Basicas
         private Prestador prestador;
         private Usuario usuario;
 
+        public Agendamento()
+        {
+            this.usuario = new Usuario();
+            this.prestador = new Prestador();
+            this.paciente = new Paciente();
+        }
+
+
+
         [DataMember(IsRequired = true)]
         public int CdAgendamento { get => cdAgendamento; set => cdAgendamento = value; }
         [DataMember(IsRequired = true)]

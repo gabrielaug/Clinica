@@ -16,6 +16,7 @@ namespace Biblioteca.Basicas
 		private string nmPrestador;
 		private string cpf;
 		private string nrConselho;
+        private string snAtivo;
 
 		[DataMember(IsRequired = true)]
 		public string NrConselho { get => nrConselho; set => nrConselho = value; }
@@ -28,5 +29,9 @@ namespace Biblioteca.Basicas
 
 		[DataMember(IsRequired = true)]
 		public string Cpf { get => cpf; set => cpf = value; }
-	}
+
+        [DataMember(IsRequired = true)]
+        public string SnAtivo { get => snAtivo; set => snAtivo = value; }
+
+    }
 }

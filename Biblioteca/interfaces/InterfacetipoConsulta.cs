@@ -7,11 +7,11 @@ using Biblioteca.Basicas;
 
 namespace Biblioteca.interfaces
 {
-    public interface InterfacetipoConsulta
+    public interface InterfaceTipoConsulta
     {
-        void inserir(TipoConsulta tipoconsulta);
-        void atualizar(TipoConsulta tipoconsulta);
-        void deletar(TipoConsulta tipoconsulta);
+        void inserir(TipoConsulta tipoConsulta);
+        //void atualizar(TipoConsulta tipoConsulta);
+        void inativar(TipoConsulta tipoConsulta);
         List<TipoConsulta> listarTipoConsulta();
     }
 }

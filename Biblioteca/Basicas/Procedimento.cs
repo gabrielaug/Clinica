@@ -14,6 +14,7 @@ namespace Biblioteca.Basicas
 		private string nmProcedimento;
 		private double valor;
 		private Convenio convenio;
+        private string snAtivo;
 		public Procedimento()
 		{
 			this.convenio = new Convenio();
@@ -30,5 +31,9 @@ namespace Biblioteca.Basicas
 
 		[DataMember(IsRequired = true)]
 		internal Convenio Convenio { get => convenio; set => convenio = value; }
-	}
+
+        [DataMember(IsRequired = true)]
+        public string SnAtivo { get => snAtivo; set => snAtivo = value; }
+
+    }
 }

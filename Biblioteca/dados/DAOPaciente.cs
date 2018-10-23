@@ -13,6 +13,7 @@ namespace Biblioteca.dados
 {
     class DAOPaciente : ConexaoSqlServer, InterfacePaciente
     {
+        
         public void Alterar(Paciente paciente)
         {
             #region Alterar o Paciente

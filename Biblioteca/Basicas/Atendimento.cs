@@ -21,15 +21,31 @@ namespace Biblioteca.Basicas
 		private Usuario usuario;
 		private DateTime dtAtendFinalizado;
 
+        [DataMember(IsRequired = true)]
+        public int CdAtendimento { get => cdAtendimento; set => cdAtendimento = value; }
 
-		public int CdAtendimento { get => cdAtendimento; set => cdAtendimento = value; }
-		public DateTime HrAtendimento { get => hrAtendimento; set => hrAtendimento = value; }
-		public DateTime DtAtendimento { get => dtAtendimento; set => dtAtendimento = value; }
-		public Prestador Prestador { get => prestador; set => prestador = value; }
-		public Agendamento Agendamento { get => agendamento; set => agendamento = value; }
-		public Procedimento Procedimento { get => procedimento; set => procedimento = value; }
-		public TipoConsulta TipoConsulta { get => tipoConsulta; set => tipoConsulta = value; }
-		public Usuario Usuario { get => usuario; set => usuario = value; }
-		public DateTime DtAtendFinalizado { get => dtAtendFinalizado; set => dtAtendFinalizado = value; }
+        [DataMember(IsRequired = true)]
+        public DateTime HrAtendimento { get => hrAtendimento; set => hrAtendimento = value; }
+
+        [DataMember(IsRequired = true)]
+        public DateTime DtAtendimento { get => dtAtendimento; set => dtAtendimento = value; }
+
+        [DataMember(IsRequired = true)]
+        public Prestador Prestador { get => prestador; set => prestador = value; }
+
+        [DataMember(IsRequired = true)]
+        public Agendamento Agendamento { get => agendamento; set => agendamento = value; }
+
+        [DataMember(IsRequired = true)]
+        public Procedimento Procedimento { get => procedimento; set => procedimento = value; }
+
+        [DataMember(IsRequired = true)]
+        public TipoConsulta TipoConsulta { get => tipoConsulta; set => tipoConsulta = value; }
+
+        [DataMember(IsRequired = true)]
+        public Usuario Usuario { get => usuario; set => usuario = value; }
+
+        [DataMember(IsRequired = true)]
+        public DateTime DtAtendFinalizado { get => dtAtendFinalizado; set => dtAtendFinalizado = value; }
 	}
 }

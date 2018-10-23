@@ -12,11 +12,16 @@ namespace Biblioteca.Basicas
     {
         private int cdConsulta;
         private string nmConsulta;
+        private string snAtivo;
 
         [DataMember(IsRequired = true)]
         public int CdConsulta { get => cdConsulta; set => cdConsulta = value; }
 
         [DataMember(IsRequired = true)]
         public string NmConsulta { get => nmConsulta; set => nmConsulta = value; }
+
+        [DataMember(IsRequired = true)]
+        public string SnAtivo { get => snAtivo; set => snAtivo = value; }
+
     }
 }

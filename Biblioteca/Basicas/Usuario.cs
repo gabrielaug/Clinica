@@ -14,6 +14,7 @@ namespace Biblioteca.Basicas
         private string userName;
         private string senha;
         private string nome;
+        private string snAtivo;
 
         [DataMember(IsRequired = true)]
         public string UserName { get => userName; set => userName = value; }
@@ -23,5 +24,9 @@ namespace Biblioteca.Basicas
 
         [DataMember(IsRequired = true)]
         public string Nome { get => nome; set => nome = value; }
+
+        [DataMember(IsRequired = true)]
+        public string SnAtivo { get => snAtivo; set => snAtivo = value; }
+
     }
 }
