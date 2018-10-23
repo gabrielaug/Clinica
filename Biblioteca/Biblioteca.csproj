@@ -53,9 +53,16 @@
     <Compile Include="Basicas\TipoConsulta.cs" />
     <Compile Include="Basicas\Usuario.cs" />
     <Compile Include="conexao\ConexaoSqlServer.cs" />
+    <Compile Include="dados\DAOAgendamento.cs" />
     <Compile Include="dados\DAOPaciente.cs" />
     <Compile Include="interfaces\InterfaceAgendamento.cs" />
+    <Compile Include="interfaces\InterfaceAtendimento.cs" />
+    <Compile Include="interfaces\InterfaceConvenio.cs" />
     <Compile Include="interfaces\InterfacePaciente.cs" />
+    <Compile Include="interfaces\InterfacePrestador.cs" />
+    <Compile Include="interfaces\InterfaceProcedimento.cs" />
+    <Compile Include="interfaces\InterfacetipoConsulta.cs" />
+    <Compile Include="interfaces\InterfaceUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
