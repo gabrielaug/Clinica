@@ -1,2 +1,6 @@
 C:\Users\Gabriel Augusto\Documents\GitHub\Clinica\Biblioteca\obj\Debug\Biblioteca.csprojAssemblyReference.cache
 C:\Users\Gabriel Augusto\Documents\GitHub\Clinica\Biblioteca\obj\Debug\Biblioteca.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel Augusto\Documents\GitHub\Clinica\Biblioteca\bin\Debug\Biblioteca.dll
+C:\Users\Gabriel Augusto\Documents\GitHub\Clinica\Biblioteca\bin\Debug\Biblioteca.pdb
+C:\Users\Gabriel Augusto\Documents\GitHub\Clinica\Biblioteca\obj\Debug\Biblioteca.dll
+C:\Users\Gabriel Augusto\Documents\GitHub\Clinica\Biblioteca\obj\Debug\Biblioteca.pdb

@@ -14,11 +14,11 @@ namespace Biblioteca.conexao
         //tipo responsável para se trabalhar com o sqlserver
         public SqlConnection sqlConn;
         //máquina no qual estará o banco de dados
-        private const string local = "localhost";
+        private const string local = @"GABRIELAUGUSTO\SQLEXPRESS";
         //nome do banco de dados no qual desejamos nos comunicar
-        private const string banco_de_dados = "aluno";
+        private const string banco_de_dados = "sistemaBD";
         //usuário que tenha os privilégios para utilizar o banco de dados
-        private const string usuario = "jersonbrito";
+        private const string usuario = "sistema";
         //senha do usuario
         private const string senha = "123";
         #endregion

@@ -100,7 +100,7 @@ namespace Biblioteca.dados
                 this.abrirConexao();
 
                 string sql = "SELECT Cd_Consulta,Nm_Consulta,sn_Ativo FROM Tipo_Consulta ";
-
+                
                 if (tipoConsulta.CdConsulta > 0)
                 {
                     sql += "WHERE Cd_Consulta = @Cd_Consulta";
