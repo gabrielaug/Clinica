@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Biblioteca.Basicas
 {
     [DataContract]
-    public class Agendamento
+    public class Agendamento 
     {
         
         private int cdAgendamento;

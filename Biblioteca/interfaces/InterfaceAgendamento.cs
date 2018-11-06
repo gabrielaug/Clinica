@@ -16,6 +16,6 @@ namespace Biblioteca.interfaces
 
         void Excluir(Agendamento agendamento);
 
-        List<Agendamento> ListaAgendamentos(Agendamento agendamento);
+        List<Agendamento> ListaAgendamentos(Agendamento agendamento); 
     }
 }
