@@ -11,7 +11,7 @@ using Biblioteca.interfaces;
 
 namespace Biblioteca.dados
 {
-    class DAOAgendamento : ConexaoSqlServer, InterfaceAgendamento
+   public class DAOAgendamento : ConexaoSqlServer, InterfaceAgendamento
     {
         #region Agendar Paciente
         public void Agendar(Agendamento agendamento)
@@ -105,6 +105,10 @@ namespace Biblioteca.dados
                 cmd.Parameters.Add("@username", SqlDbType.VarChar);
                 cmd.Parameters["@username"].Value = agendamento.Usuario.UserName;
 
+                cmd.Parameters.Add("@cd_agendamento", SqlDbType.VarChar);
+                cmd.Parameters["@cd_agendamento"].Value = agendamento.CdAgendamento;
+
+
                 //executando a instrucao 
                 cmd.ExecuteNonQuery();
                 //liberando a memoria 
@@ -118,6 +122,7 @@ namespace Biblioteca.dados
             }
         }
 
+               
         public List<Agendamento> ListaAgendamentos(Agendamento filtro)
         {
             List<Agendamento> retorno = new List<Agendamento>();
@@ -129,34 +134,34 @@ namespace Biblioteca.dados
 
                 string sql;
 
-                sql = " select a.cd_agendamento, a.cd_paciente, b.nm_paciente, a.dt_consulta, a.hr_consulta, a.cd_prestador, c.nm_prestador nome_prestador, a.username usuario"
+                sql = " select a.cd_agendamento, a.cd_paciente, b.nm_paciente, a.dt_consulta, a.hr_consulta, a.cd_prestador, c.nm_prestador nome_prestador, a.username";
 
                 sql += " from Agendamento as a inner join paciente as b on a.cd_paciente = b.cd_paciente";
                 sql += " inner join prestador as c on a.cd_prestador = c.cd_prestador";
-                sql += "inner join usuario as d on a.username = d.username";
- 
+                sql += " inner join usuario as d on a.username = d.username";
+
 
                 if (filtro.CdAgendamento > 0)
                 {
-                    sql += " and cd_agendamento = @cd_agendamento ";
+                    sql += " and Cd_Agendamento = @Cd_Agendamento ";
                 }
 
                 if (filtro.Prestador != null && filtro.Prestador.CdPrestador > 0)
                 {
-                    sql += " and cd_prestador = @cd_prestador ";
+                    sql += " and cd_prestador = @Cd_Prestador ";
                 }
 
                 SqlCommand cmd = new SqlCommand(sql, sqlConn);
 
                 if (filtro.CdAgendamento > 0)
                 {
-                    cmd.Parameters.Add("@cd_agendamento", SqlDbType.Int);
-                    cmd.Parameters["@cd_agendamento"].Value = filtro.CdAgendamento;
+                    cmd.Parameters.Add("@Cd_Agendamento", SqlDbType.Int);
+                    cmd.Parameters["@Cd_Agendamento"].Value = filtro.CdAgendamento;
                 }
                 if (filtro.Prestador != null && filtro.Prestador.CdPrestador > 0)
                 {
-                    cmd.Parameters.Add("@cd_prestador", SqlDbType.Int);
-                    cmd.Parameters["@cd_prestador"].Value = filtro.Prestador.CdPrestador;
+                    cmd.Parameters.Add("@Cd_Prestador", SqlDbType.Int);
+                    cmd.Parameters["@Cd_Prestador"].Value = filtro.Prestador.CdPrestador;
                 }
 
 
@@ -170,12 +175,12 @@ namespace Biblioteca.dados
                     agendamento.CdAgendamento = DbReader.GetInt32(DbReader.GetOrdinal("Cd_Agendamento"));
                     agendamento.Paciente.CdPaciente = DbReader.GetInt32(DbReader.GetOrdinal("Cd_Paciente"));
                     agendamento.Paciente.NmPaciente = DbReader.GetString(DbReader.GetOrdinal("Nm_Paciente"));
-                    agendamento.DtConsulta = DbReader.GetDateTime(DbReader.GetOrdinal("Dt-Consulta"));
-                    agendamento.HrConsulta = DbReader.GetDateTime(DbReader.GetOrdinal("Hr-Consulta"));
-                    agendamento.Prestador.CdPrestador = DbReader.GetInt32(DbReader.GetOrdinal("Cd_prestador"));
-                    agendamento.Prestador.NmPrestador = DbReader.GetString(DbReader.GetOrdinal("Nm_prestador"));
+                    agendamento.DtConsulta = DbReader.GetDateTime(DbReader.GetOrdinal("Dt_Consulta"));
+                    agendamento.HrConsulta = DbReader.GetDateTime(DbReader.GetOrdinal("Hr_Consulta"));
+                    agendamento.Prestador.CdPrestador = DbReader.GetInt32(DbReader.GetOrdinal("Cd_Prestador"));
+                    agendamento.Prestador.NmPrestador = DbReader.GetString(DbReader.GetOrdinal("Nm_Prestador"));
                     agendamento.Usuario.UserName = DbReader.GetString(DbReader.GetOrdinal("UserName"));
-                // retorno.Add(agendamento);
+                    // retorno.Add(agendamento);
                 }
                 //fechando o leitor de resultados
                 DbReader.Close();
@@ -187,16 +192,12 @@ namespace Biblioteca.dados
             }
             catch (Exception ex)
             {
-                throw new Exception("Falha ao Listar o(s) Agendamento9s) " + ex.Message);
+                throw new Exception("Falha ao Listar o(s) Agendamentos) " + ex.Message);
             }
             return retorno;
 
         }
 
-        public List<Agendamento> ListaAgendamentos()
-        {
-            throw new NotImplementedException();
-        }
     }
 
 }

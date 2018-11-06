@@ -36,8 +36,13 @@ namespace Biblioteca.Basicas
         [DataMember(IsRequired = true)]
         public Prestador Prestador { get => prestador; set => prestador = value; }
         [DataMember(IsRequired = true)]
-        internal Paciente Paciente { get => paciente; set => paciente = value; }
+        public Paciente Paciente { get => paciente; set => paciente = value; }
         [DataMember(IsRequired = true)]
-        internal Usuario Usuario { get => usuario; set => usuario = value; }
+        public Usuario Usuario { get => usuario; set => usuario = value; }
+
+        public string ToString()
+        {
+            return "Codigo:" + this.cdAgendamento + "Data Consulta:" + this.dtConsulta + "prestador:" + this.Prestador.CdPrestador + "nome prestador:" + this.Prestador.NmPrestador + "paciente:" + this.Paciente.CdPaciente;
+        }
     }
 }
