@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.dados
 {
-    class DAOTipoConsulta : ConexaoSqlServer, InterfaceTipoConsulta
+    public  class DAOTipoConsulta : ConexaoSqlServer, InterfaceTipoConsulta
     {
         public void inativar(TipoConsulta tipoConsulta)
         {
@@ -21,7 +21,7 @@ namespace Biblioteca.dados
             {
                 //abrir a conexão
                 this.abrirConexao();
-                string sql = "UPDATE Tipo_Consulta SET";
+                string sql = "UPDATE Tipo_Consulta SET ";
                 sql += "sn_Ativo = @sn_Ativo WHERE Cd_Consulta =  @Cd_Consulta";
 
                 //instrucao a ser executada
@@ -59,20 +59,14 @@ namespace Biblioteca.dados
                 //abrir a conexão
                 this.abrirConexao();
                 string sql = "INSERT INTO Tipo_Consulta";
-                sql += "(Cd_Consulta,Nm_Consulta,sn_Ativo)";
-                sql += "VALUES (@Cd_Consulta,@Nm_Consulta,@sn_Ativo)";
+                sql += "(Nm_Consulta)";
+                sql += "VALUES (@Nm_Consulta)";
                 //instrucao a ser executada
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
-                cmd.Parameters.Add("@Cd_Consulta", SqlDbType.Int);
-                cmd.Parameters["@Cd_Consulta"].Value = tipoConsulta.CdConsulta;
-
+              
                 cmd.Parameters.Add("@Nm_Consulta", SqlDbType.VarChar);
                 cmd.Parameters["@Nm_Consulta"].Value = tipoConsulta.NmConsulta;
-
-                cmd.Parameters.Add("@sn_Ativo", SqlDbType.VarChar);
-                cmd.Parameters["@sn_Ativo"].Value = tipoConsulta.SnAtivo;
-
 
 
                 //executando a instrucao 

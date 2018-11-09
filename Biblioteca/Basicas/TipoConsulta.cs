@@ -14,6 +14,11 @@ namespace Biblioteca.Basicas
         private string nmConsulta;
         private string snAtivo;
 
+        public string ToString()
+        {
+            return "Codigo: " + this.CdConsulta + " Nome: " + this.NmConsulta +  " Ativo:" + this.SnAtivo;
+        }
+
         [DataMember(IsRequired = true)]
         public int CdConsulta { get => cdConsulta; set => cdConsulta = value; }
 
