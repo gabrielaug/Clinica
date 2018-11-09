@@ -16,6 +16,11 @@ namespace Biblioteca.Basicas
         private string nome;
         private string snAtivo;
 
+        public string ToString()
+        {
+            return " userName " + this.UserName + " senha " + this.Senha + " nome" + this.Nome + "snAtivo" + this.SnAtivo;
+        }
+
         [DataMember(IsRequired = true)]
         public string UserName { get => userName; set => userName = value; }
 
