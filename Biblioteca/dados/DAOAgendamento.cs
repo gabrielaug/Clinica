@@ -20,25 +20,22 @@ namespace Biblioteca.dados
             {
                 //abrir a conexão
                 this.abrirConexao();
-                string sql = "INSERT INTO agendamento(dt_consulta, hr_consulta, cd_paciente, cd_prestador, username)";
-                sql += "VALUES(@dt_consulta, @hr_consulta, @cd_paciente, @cd_prestador, @username)";
+                string sql = "INSERT INTO Agendamento (Dt_Consulta, Cd_Paciente, Cd_Prestador, UserName)";
+                sql += " VALUES(@Dt_Consulta, @Cd_Paciente, @Cd_Prestador, @UserName)";
                 //instrucao a ser executada
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
-                cmd.Parameters.Add("@dt_consulta", SqlDbType.DateTime);
-                cmd.Parameters["@dt_consulta"].Value = agendamento.DtConsulta;
+                cmd.Parameters.Add("@Dt_Consulta", SqlDbType.DateTime);
+                cmd.Parameters["@Dt_Consulta"].Value = agendamento.DtConsulta;
 
-                cmd.Parameters.Add("@hr_consulta", SqlDbType.DateTime);
-                cmd.Parameters["@hr_consulta"].Value = agendamento.HrConsulta;
+                cmd.Parameters.Add("@Cd_Paciente", SqlDbType.Int);
+                cmd.Parameters["@Cd_Paciente"].Value = agendamento.Paciente.CdPaciente;
 
-                cmd.Parameters.Add("@cd_paciente", SqlDbType.Int);
-                cmd.Parameters["@cd_paciente"].Value = agendamento.Paciente.CdPaciente;
+                cmd.Parameters.Add("@Cd_Prestador", SqlDbType.Int);
+                cmd.Parameters["@Cd_Prestador"].Value = agendamento.Prestador.CdPrestador;
 
-                cmd.Parameters.Add("@cd_prestador", SqlDbType.Int);
-                cmd.Parameters["@cd_prestador"].Value = agendamento.Prestador.CdPrestador;
-
-                cmd.Parameters.Add("@username", SqlDbType.VarChar);
-                cmd.Parameters["@username"].Value = agendamento.Usuario.UserName;
+                cmd.Parameters.Add("@UserName", SqlDbType.VarChar);
+                cmd.Parameters["@UserName"].Value = agendamento.Usuario.UserName;
 
                 //executando a instrucao 
                 cmd.ExecuteNonQuery();
@@ -49,22 +46,23 @@ namespace Biblioteca.dados
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao conectar e inserir " + ex.Message);
+                throw new Exception("Erro ao tentar gerar agendamento " + ex.Message);
             }
 
         }
         #endregion
         public void Excluir(Agendamento agendamento)
         {
+            #region Excluir Agendamento
             try
             {
                 //abrir a conexão
                 this.abrirConexao();
-                string sql = "delete from agendamento where cd_agendamento = @cd_agendamento";
+                string sql = "DELETE FROM Agendamento WHERE Cd_Agendamento = @Cd_Agendamento";
                 //instrucao a ser executada
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
-                cmd.Parameters.Add("@cd_agendamento", SqlDbType.Int);
-                cmd.Parameters["@cd_agendamento"].Value = agendamento.CdAgendamento;
+                cmd.Parameters.Add("@Cd_Agendamento", SqlDbType.Int);
+                cmd.Parameters["@Cd_Agendamento"].Value = agendamento.CdAgendamento;
                 //executando a instrucao 
                 cmd.ExecuteNonQuery();
                 //liberando a memoria 
@@ -74,9 +72,9 @@ namespace Biblioteca.dados
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao conectar e remover " + ex.Message);
+                throw new Exception("Erro ao tentar excluir Agendamento " + ex.Message);
             }
-
+            #endregion
         }
 
         public void Remarcar(Agendamento agendamento)
@@ -85,28 +83,23 @@ namespace Biblioteca.dados
             {
                 //abrir a conexão
                 this.abrirConexao();
-                string sql = "update agendamento set dt_consulta = @dt_consulta,hr_consulta = @hr_consulta, cd_paciente = @cd_paciente, cd_prestador = @cd_prestador, username = @username where cd_agendamento = @cd_agendamento";
+                string sql = "UPDATE Agendamento SET Dt_Consulta = @Dt_Consulta, ";
+                sql += " Cd_Prestador = @Cd_Prestador, UserName = @UserName WHERE Cd_Agendamento = @Cd_Agendamento";
 
                 //instrucao a ser executada
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
-                cmd.Parameters.Add("@dt_consulta", SqlDbType.DateTime);
-                cmd.Parameters["@dt_consulta"].Value = agendamento.DtConsulta;
+                cmd.Parameters.Add("@Dt_Consulta", SqlDbType.DateTime);
+                cmd.Parameters["@Dt_Consulta"].Value = agendamento.DtConsulta;
 
-                cmd.Parameters.Add("@hr_consulta", SqlDbType.DateTime);
-                cmd.Parameters["@hr_consulta"].Value = agendamento.HrConsulta;
+                cmd.Parameters.Add("@Cd_Prestador", SqlDbType.Int);
+                cmd.Parameters["@Cd_Prestador"].Value = agendamento.Prestador.CdPrestador;
 
-                cmd.Parameters.Add("@cd_paciente", SqlDbType.Int);
-                cmd.Parameters["@cd_paciente"].Value = agendamento.Paciente.CdPaciente;
+                cmd.Parameters.Add("@UserName", SqlDbType.VarChar);
+                cmd.Parameters["@UserName"].Value = agendamento.Usuario.UserName;
 
-                cmd.Parameters.Add("@cd_prestador", SqlDbType.Int);
-                cmd.Parameters["@cd_prestador"].Value = agendamento.Prestador.CdPrestador;
-
-                cmd.Parameters.Add("@username", SqlDbType.VarChar);
-                cmd.Parameters["@username"].Value = agendamento.Usuario.UserName;
-
-                cmd.Parameters.Add("@cd_agendamento", SqlDbType.VarChar);
-                cmd.Parameters["@cd_agendamento"].Value = agendamento.CdAgendamento;
+                cmd.Parameters.Add("@Cd_Agendamento", SqlDbType.Int);
+                cmd.Parameters["@Cd_Agendamento"].Value = agendamento.CdAgendamento;
 
 
                 //executando a instrucao 
@@ -118,13 +111,14 @@ namespace Biblioteca.dados
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao conectar e remarcar " + ex.Message);
+                throw new Exception("Erro ao tentar Remarcar agendamento " + ex.Message);
             }
         }
 
                
         public List<Agendamento> ListaAgendamentos(Agendamento filtro)
         {
+            #region Listar Agendamentos
             List<Agendamento> retorno = new List<Agendamento>();
 
             try
@@ -134,21 +128,16 @@ namespace Biblioteca.dados
 
                 string sql;
 
-                sql = " select a.cd_agendamento, a.cd_paciente, b.nm_paciente, a.dt_consulta, a.hr_consulta, a.cd_prestador, c.nm_prestador nome_prestador, a.username";
+                sql = " SELECT a.Cd_Agendamento, a.Cd_Paciente, b.Nm_Paciente, a.Dt_Consulta, a.Cd_Prestador, c.Nm_Prestador, a.UserName";
 
-                sql += " from Agendamento as a inner join paciente as b on a.cd_paciente = b.cd_paciente";
-                sql += " inner join prestador as c on a.cd_prestador = c.cd_prestador";
-                sql += " inner join usuario as d on a.username = d.username";
+                sql += " FROM Agendamento as a INNER JOIN Paciente as b on a.Cd_Paciente = b.Cd_Paciente";
+                sql += " INNER JOIN Prestador as c on a.Cd_Prestador = c.Cd_Prestador";
+                sql += " INNER JOIN Usuario as d on a.UserName = d.UserName";
 
 
                 if (filtro.CdAgendamento > 0)
                 {
-                    sql += " and Cd_Agendamento = @Cd_Agendamento ";
-                }
-
-                if (filtro.Prestador != null && filtro.Prestador.CdPrestador > 0)
-                {
-                    sql += " and cd_prestador = @Cd_Prestador ";
+                    sql += " WHERE a.Cd_Agendamento = @Cd_Agendamento ";
                 }
 
                 SqlCommand cmd = new SqlCommand(sql, sqlConn);
@@ -157,11 +146,6 @@ namespace Biblioteca.dados
                 {
                     cmd.Parameters.Add("@Cd_Agendamento", SqlDbType.Int);
                     cmd.Parameters["@Cd_Agendamento"].Value = filtro.CdAgendamento;
-                }
-                if (filtro.Prestador != null && filtro.Prestador.CdPrestador > 0)
-                {
-                    cmd.Parameters.Add("@Cd_Prestador", SqlDbType.Int);
-                    cmd.Parameters["@Cd_Prestador"].Value = filtro.Prestador.CdPrestador;
                 }
 
 
@@ -176,11 +160,10 @@ namespace Biblioteca.dados
                     agendamento.Paciente.CdPaciente = DbReader.GetInt32(DbReader.GetOrdinal("Cd_Paciente"));
                     agendamento.Paciente.NmPaciente = DbReader.GetString(DbReader.GetOrdinal("Nm_Paciente"));
                     agendamento.DtConsulta = DbReader.GetDateTime(DbReader.GetOrdinal("Dt_Consulta"));
-                    agendamento.HrConsulta = DbReader.GetDateTime(DbReader.GetOrdinal("Hr_Consulta"));
                     agendamento.Prestador.CdPrestador = DbReader.GetInt32(DbReader.GetOrdinal("Cd_Prestador"));
                     agendamento.Prestador.NmPrestador = DbReader.GetString(DbReader.GetOrdinal("Nm_Prestador"));
                     agendamento.Usuario.UserName = DbReader.GetString(DbReader.GetOrdinal("UserName"));
-                    // retorno.Add(agendamento);
+                    retorno.Add(agendamento);
                 }
                 //fechando o leitor de resultados
                 DbReader.Close();
@@ -192,10 +175,10 @@ namespace Biblioteca.dados
             }
             catch (Exception ex)
             {
-                throw new Exception("Falha ao Listar o(s) Agendamentos) " + ex.Message);
+                throw new Exception("Falha ao Listar os Agendamentos " + ex.Message);
             }
             return retorno;
-
+            #endregion
         }
 
     }

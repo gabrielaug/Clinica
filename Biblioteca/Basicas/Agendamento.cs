@@ -42,7 +42,11 @@ namespace Biblioteca.Basicas
 
         public string ToString()
         {
-            return "Codigo:" + this.cdAgendamento + "Data Consulta:" + this.dtConsulta + "prestador:" + this.Prestador.CdPrestador + "nome prestador:" + this.Prestador.NmPrestador + "paciente:" + this.Paciente.CdPaciente;
+            string retorno;
+
+            retorno = this.CdAgendamento + " " + this.Paciente.CdPaciente + " " + this.Paciente.NmPaciente;
+            retorno += " " + this.DtConsulta + " " + this.Prestador.CdPrestador + " " + this.Prestador.NmPrestador + " " + this.Usuario.UserName;
+            return retorno;
         }
     }
 }
