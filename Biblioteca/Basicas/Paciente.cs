@@ -26,6 +26,15 @@ namespace Biblioteca.Basicas
         private string bairro;
         private string estado;
 
+        public string ToString()
+        {
+            string retorno = this.CdPaciente + " " + this.NmPaciente + " " + this.NmMae + " " + this.NmPai + " " + this.NmSocial + " ";
+            retorno += this.Cpf + " " + this.Rg + " " + this.DtNascimento + " " + this.Telefone + " " + this.Endereco + " " + this.Email+" ";
+            retorno += this.Cidade + " " + this.Bairro + " " + this.Estado;
+
+            return retorno;
+        }
+
         [DataMember(IsRequired = true)]
         public int CdPaciente { get => cdPaciente; set => cdPaciente = value; }
 

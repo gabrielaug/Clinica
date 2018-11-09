@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.dados
 {
-    class DAOPaciente : ConexaoSqlServer, InterfacePaciente
+    public class DAOPaciente : ConexaoSqlServer, InterfacePaciente
     {
         
         public void Alterar(Paciente paciente)
@@ -21,8 +21,8 @@ namespace Biblioteca.dados
             {
                 //abrir a conexão
                 this.abrirConexao();
-                string sql = "UPDATE Paciente SET";
-                sql += "Nm_Paciente = @Nm_Paciente,Nm_Mae = @Nm_Mae ,Nm_Pai = @Nm_Pai,Nm_Social = @Nm_Social,CPF = @CPF,RG = @RG,Dt_Nascimento = @Dt_Nascimento,";
+                string sql = "UPDATE Paciente SET ";
+                sql += "Nm_Paciente = @Nm_Paciente,Nm_Mae = @Nm_Mae ,Nm_Pai = @Nm_Pai,Nm_Social = @Nm_Social,CPF = @CPF,RG = @RG,Dt_Nascimento = @Dt_Nascimento, ";
                 sql += "Telefone = @Telefone,Endereco = @Endereco,Email = @Email,Cidade = @Cidade,Bairro = @Bairro,Estado = @Estado WHERE Cd_Paciente = @Cd_Paciente;";
 
                 //instrucao a ser executada
@@ -93,8 +93,8 @@ namespace Biblioteca.dados
                 //abrir a conexão
                 this.abrirConexao();
                 string sql = "INSERT INTO Paciente";
-                sql += "(Nm_Paciente,Nm_Mae,Nm_Pai,Nm_Social,CPF,RG,Dt_Nascimento,Telefone,Endereco,Email,Cidade,Bairro,Estado)";
-                sql += "values(@Nm_Paciente,@Nm_Mae,@Nm_Pai,@Nm_Social,@CPF,@RG,@Dt_Nascimento,@Telefone,@Endereco,@Email,@Cidade,@Bairro,@Estado)";
+                sql += "(Nm_Paciente,Nm_Mae,Nm_Pai,Nm_Social,CPF,RG,Dt_Nascimento,Telefone,Endereco,Email,Cidade,Bairro,Estado) ";
+                sql += "values (@Nm_Paciente,@Nm_Mae,@Nm_Pai,@Nm_Social,@CPF,@RG,@Dt_Nascimento,@Telefone,@Endereco,@Email,@Cidade,@Bairro,@Estado)";
                 //instrucao a ser executada
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
@@ -168,17 +168,17 @@ namespace Biblioteca.dados
 
                 string sql;
 
-                sql = "SELECT Nm_Paciente,Nm_Mae,Nm_Pai,Nm_Social,CPF,RG,Dt_Nascimento,Telefone,Endereco,Email,Cidade,Bairro,Estado FROM Paciente ";
+                sql = "SELECT Cd_Paciente,Nm_Paciente,Nm_Mae,Nm_Pai,Nm_Social,CPF,RG,Dt_Nascimento,Telefone,Endereco,Email,Cidade,Bairro,Estado FROM Paciente ";
 
                 if(filtro.CdPaciente > 0)
                 {
-                    sql += "WHERE Cd_Paciente = @Cd_Paciente";
+                    sql += " WHERE Cd_Paciente = @Cd_Paciente";
 
                 }
 
                 if (filtro.NmPaciente != null && filtro.NmPaciente.Trim().Equals("") == false)
                 {
-                    sql += "WHERE LIKE @NmPaciente";
+                    sql += " WHERE Nm_Paciente LIKE @NmPaciente";
                 
                 }
 
@@ -192,8 +192,8 @@ namespace Biblioteca.dados
 
                 if (filtro.NmPaciente != null && filtro.NmPaciente.Trim().Equals("") == false)
                 {
-                    cmd.Parameters.Add("@nome", SqlDbType.VarChar);
-                    cmd.Parameters["@nome"].Value = filtro.NmPaciente;
+                    cmd.Parameters.Add("@NmPaciente", SqlDbType.VarChar);
+                    cmd.Parameters["@NmPaciente"].Value = "%"+ filtro.NmPaciente + "%";
 
                 }
 
