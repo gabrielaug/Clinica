@@ -10,18 +10,27 @@ namespace Biblioteca.Basicas
 	[DataContract]
 	public class Procedimento
 	{
-		private int cdProcedimento;
+		private string cdProcedimento;
 		private string nmProcedimento;
 		private double valor;
 		private Convenio convenio;
         private string snAtivo;
-		public Procedimento()
-		{
-			this.convenio = new Convenio();
-		}
 
-		[DataMember(IsRequired = true)]
-		public int CdProcedimento { get => cdProcedimento; set => cdProcedimento = value; }
+        public Procedimento()
+        {
+            this.Convenio = new Convenio();
+        }
+
+        public string ToString()
+        {
+            string retorno;
+
+            retorno = this.CdProcedimento + " " + this.NmProcedimento + " " + this.Valor + " " + this.Convenio.CdConvenio + " " + this.Convenio.NmConvenio + " " + this.SnAtivo;
+            return retorno;
+        }
+
+        [DataMember(IsRequired = true)]
+		public string CdProcedimento { get => cdProcedimento; set => cdProcedimento = value; }
 
 		[DataMember(IsRequired = true)]
 		public string NmProcedimento { get => nmProcedimento; set => nmProcedimento = value; }
@@ -30,7 +39,7 @@ namespace Biblioteca.Basicas
 		public double Valor { get => valor; set => valor = value; }
 
 		[DataMember(IsRequired = true)]
-		internal Convenio Convenio { get => convenio; set => convenio = value; }
+		public Convenio Convenio { get => convenio; set => convenio = value; }
 
         [DataMember(IsRequired = true)]
         public string SnAtivo { get => snAtivo; set => snAtivo = value; }
