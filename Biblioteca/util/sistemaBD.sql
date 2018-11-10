@@ -60,9 +60,9 @@ CREATE TABLE Tipo_Consulta (Cd_Consulta INT PRIMARY KEY IDENTITY(1,1),
 							sn_Ativo CHAR(1) NOT NULL DEFAULT 'S' 
 							);
 
-CREATE TABLE Procedimento (	Cd_Procedimento INT PRIMARY KEY,  /* Codigo sem auto-incremento pois possui para cada Convenio*/
+CREATE TABLE Procedimento (	Cd_Procedimento VARCHAR(50) PRIMARY KEY,  /* Codigo sem auto-incremento pois possui para cada Convenio*/
 							Nm_Procedimento VARCHAR(100) NOT NULL,
-							Valor Decimal(4,2),
+							Valor Decimal(6,2),
 							Cd_Convenio INT REFERENCES Convenio (Cd_Convenio),
 							sn_Ativo CHAR(1) NOT NULL DEFAULT 'S'
 							); 
