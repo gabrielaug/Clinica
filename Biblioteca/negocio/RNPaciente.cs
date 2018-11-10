@@ -79,7 +79,7 @@ namespace Biblioteca.negocio
 
         #region Validar Atributos de um Paciente
 
-        Boolean ValidarAtributos(Paciente p)
+        bool ValidarAtributos(Paciente p)
         {
             if (p.NmPaciente == null || p.NmPaciente.Trim().Equals(""))
             {
