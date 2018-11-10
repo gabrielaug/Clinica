@@ -157,7 +157,7 @@ namespace Biblioteca.dados
 
         public List<Paciente> ListaPaciente(Paciente filtro)
         {
-
+            #region Listar os Pacientes
 
             List<Paciente> retorno = new List<Paciente>();
 
@@ -234,6 +234,55 @@ namespace Biblioteca.dados
                 throw new Exception("Falha ao Listar o  Paciente " + ex.Message);
             }
             return retorno;
+            #endregion
+
+        }
+
+        public bool VerificarCPF(Paciente paciente)
+        {
+            #region Verificar se o CPF já esta cadastrado
+            bool retorno = false;
+
+            try
+            {
+
+                this.abrirConexao();
+
+                string sql;
+
+                sql = "SELECT Cd_Paciente,Nm_Paciente,Nm_Mae,Nm_Pai,Nm_Social,CPF,RG,Dt_Nascimento,Telefone,Endereco,Email,Cidade,Bairro,Estado FROM Paciente ";
+                sql += "WHERE CPF = @CPF";
+              
+
+                SqlCommand cmd = new SqlCommand(sql, sqlConn);
+
+                    cmd.Parameters.Add("@CPF", SqlDbType.VarChar);
+                    cmd.Parameters["@CPF"].Value = paciente.Cpf;
+                
+
+                SqlDataReader DbReader = cmd.ExecuteReader();
+
+
+                if (!DbReader.Read())
+                {
+                    retorno = true;
+                 
+                }
+                //fechando o leitor de resultados
+                DbReader.Close();
+                //liberando a memoria 
+                cmd.Dispose();
+                //fechando a conexao
+                this.fecharConexao();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Falha ao Verificar Duplicidade " + ex.Message);
+            }
+
+            return retorno;
+#endregion
 
         }
     }

@@ -16,5 +16,6 @@ namespace Biblioteca.interfaces
 
         List<Paciente> ListaPaciente(Paciente filtro);
 
+        bool VerificarCPF(Paciente paciente);
     }
 }
