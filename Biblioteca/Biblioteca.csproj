@@ -56,7 +56,9 @@
     <Compile Include="conexao\ConexaoSqlServer.cs" />
     <Compile Include="dados\DAOAgendamento.cs" />
     <Compile Include="dados\DAOPaciente.cs" />
+    <Compile Include="dados\DAOProcedimento.cs" />
     <Compile Include="dados\DAOTipoConsulta.cs" />
+    <Compile Include="dados\DAOUsuario.cs" />
     <Compile Include="interfaces\InterfaceAgendamento.cs" />
     <Compile Include="interfaces\InterfaceAtendimento.cs" />
     <Compile Include="interfaces\InterfaceConvenio.cs" />
@@ -65,6 +67,8 @@
     <Compile Include="interfaces\InterfaceProcedimento.cs" />
     <Compile Include="interfaces\InterfaceTipoConsulta.cs" />
     <Compile Include="interfaces\InterfaceUsuario.cs" />
+    <Compile Include="negocio\RNAgendamento.cs" />
+    <Compile Include="negocio\RNPaciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
