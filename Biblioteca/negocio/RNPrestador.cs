@@ -87,10 +87,9 @@ namespace Biblioteca.negocio
              }
 
             public List<Prestador> ListaPrestadores(Prestador filtro)
-        {
-
-            return dao.ListaPrestadores(filtro);
-        }
+            {
+             return dao.ListaPrestadores(filtro);
+            }
 
         public bool VerificarCPF(Prestador prestador)
         {

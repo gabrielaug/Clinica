@@ -22,8 +22,8 @@ namespace Biblioteca.dados
             {
                 //abrir a conexão
                 this.abrirConexao();
-                string sql = "INSERT INTO convenio ( nm_convenio, sn_ativo)";
-                sql += "VALUES( @nm_convenio, @sn_ativo)";
+                string sql = "INSERT INTO convenio ( nm_convenio)";
+                sql += "VALUES( @nm_convenio)";
                 //instrucao a ser executada
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 

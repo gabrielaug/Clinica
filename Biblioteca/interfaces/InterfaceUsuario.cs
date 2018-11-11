@@ -11,6 +11,6 @@ namespace Biblioteca.interfaces
     {
         void cadastrar(Usuario usuario);
         void alterar(Usuario usuario);
-        List<Usuario> listarUsuarios(Usuario usuario);
+        List<Usuario> listarUsuarios(Usuario filtro);
     }
 }

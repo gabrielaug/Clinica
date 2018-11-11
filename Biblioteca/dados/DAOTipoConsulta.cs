@@ -84,7 +84,7 @@ namespace Biblioteca.dados
             #endregion
         }
 
-        public List<TipoConsulta> listarTipoConsulta(TipoConsulta tipoConsulta)
+        public List<TipoConsulta> listarTipoConsulta(TipoConsulta filtro)
         {
             try
             {
@@ -93,19 +93,19 @@ namespace Biblioteca.dados
 
                 this.abrirConexao();
 
-                string sql = "SELECT Cd_Consulta,Nm_Consulta,sn_Ativo FROM Tipo_Consulta ";
+                string sql = "SELECT Cd_Consulta,Nm_Consqulta,sn_Ativo FROM Tipo_Consulta ";
                 
-                if (tipoConsulta.CdConsulta > 0)
+                if (filtro.CdConsulta > 0)
                 {
                     sql += "WHERE Cd_Consulta = @Cd_Consulta";
                 }
 
                 SqlCommand cmd = new SqlCommand(sql, sqlConn);
 
-                if (tipoConsulta.CdConsulta > 0)
+                if (filtro.CdConsulta > 0)
                 {
                     cmd.Parameters.Add("@Cd_Consulta", SqlDbType.Int);
-                    cmd.Parameters["@Cd_Consulta"].Value = tipoConsulta.CdConsulta;
+                    cmd.Parameters["@Cd_Consulta"].Value = filtro.CdConsulta;
                 }
 
                 SqlDataReader DbReader = cmd.ExecuteReader();

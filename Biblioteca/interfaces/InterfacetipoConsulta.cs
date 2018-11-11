@@ -12,6 +12,6 @@ namespace Biblioteca.interfaces
         void inserir(TipoConsulta tipoConsulta);
         //void atualizar(TipoConsulta tipoConsulta);
         void inativar(TipoConsulta tipoConsulta);
-        List<TipoConsulta> listarTipoConsulta(TipoConsulta tipoConsulta);
+        List<TipoConsulta> listarTipoConsulta(TipoConsulta filtro);
     }
 }

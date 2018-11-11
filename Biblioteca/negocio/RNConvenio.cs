@@ -43,7 +43,17 @@ namespace Biblioteca.negocio
 
         public void inativar (Convenio convenio)
         {
+            if (convenio.SnAtivo == "S")
+            {
+                try
+                {
+                    dao.inativar(convenio);
+                }
+                catch
+                {
 
+                }
+            }
         }
 
         public List<Convenio> listarConvenios(Convenio filtro)
