@@ -13,9 +13,10 @@ namespace Biblioteca.dados
 {
     public class DAOAtendimento : ConexaoSqlServer, InterfaceAtendimento
     {
-        #region Atualizar Atendimento
+        
         public void atualizar(Atendimento atendimento)
         {
+            #region Atualizar Atendimento
             try
             {
                 //abrir a conexão
@@ -61,11 +62,13 @@ namespace Biblioteca.dados
             {
                 throw new Exception("Erro ao conectar e atualizar " + ex.Message);
             }
+            #endregion
         }
-        #endregion
-        #region Excluir Atendimento
+
+
         public void excluir(Atendimento atendimento){
-        try
+            #region Excluir Atendimento
+            try
             {
                 //abrir a conexão
                 this.abrirConexao();
@@ -84,12 +87,14 @@ namespace Biblioteca.dados
             catch (Exception ex)
             {
                 throw new Exception("Erro ao conectar e remover " + ex.Message);
+            }
+            #endregion
         }
-      }
-#endregion
-#region Atender Paciente
-public void gerar(Atendimento atendimento)
+
+
+        public void gerar(Atendimento atendimento)
         {
+            #region Atender Paciente
             try
             {
                 //abrir a conexão
@@ -131,13 +136,14 @@ public void gerar(Atendimento atendimento)
             {
                 throw new Exception("Erro ao conectar e inserir " + ex.Message);
             }
-
+            #endregion
         }
-        #endregion
 
-        #region Listar ou consultar atendimentos
+
+        
         public List<Atendimento> listarAtendimentos(Atendimento filtro)
         {
+            #region Listar ou consultar atendimentos
             List<Atendimento> retorno = new List<Atendimento>();
 
             try
@@ -159,9 +165,17 @@ public void gerar(Atendimento atendimento)
                   
                 }
 
+                
+
                 if (filtro.Prestador != null && filtro.Prestador.CdPrestador > 0)
                 {
                     sql += " and cd_prestador = @Cd_Prestador ";
+                }
+
+                if (filtro.Agendamento.CdAgendamento > 0)
+                {
+                    sql += " WHERE a.Cd_Agendamento = @Cd_Agendamento ";
+
                 }
 
                 SqlCommand cmd = new SqlCommand(sql, sqlConn);
@@ -176,7 +190,12 @@ public void gerar(Atendimento atendimento)
                     cmd.Parameters.Add("@Cd_Prestador", SqlDbType.Int);
                     cmd.Parameters["@Cd_Prestador"].Value = filtro.Prestador.CdPrestador;
                 }
+                if (filtro.Agendamento.CdAgendamento > 0)
+                {
+                    cmd.Parameters.Add("@Cd_Agendamento", SqlDbType.Int);
+                    cmd.Parameters["@Cd_Agendamento"].Value = filtro.Agendamento.CdAgendamento;
 
+                }
 
                 SqlDataReader DbReader = cmd.ExecuteReader();
 
@@ -211,9 +230,11 @@ public void gerar(Atendimento atendimento)
                 throw new Exception("Falha ao Listar o(s) Atendimentos) " + ex.Message);
             }
             return retorno;
-
+            #endregion
         }
-        #endregion
+
+        
+
 
     }
 }

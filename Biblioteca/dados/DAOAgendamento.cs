@@ -181,6 +181,125 @@ namespace Biblioteca.dados
             #endregion
         }
 
+
+        public Agendamento PesqAgendamento(Agendamento filtro)
+        {
+            #region Verificar se existe Agendamento pro paciente na mesma data e hora.
+            Agendamento retorno = new Agendamento();
+
+            try
+            {
+
+                this.abrirConexao();
+
+                string sql;
+
+                sql = "SELECT Cd_Agendamento,Dt_Consulta,Cd_Paciente,Cd_Prestador,UserName FROM Agendamento ";
+                sql += "WHERE Cd_Paciente = @Cd_Paciente AND Dt_Consulta = @Dt_Consulta";
+
+
+                SqlCommand cmd = new SqlCommand(sql, sqlConn);
+
+                cmd.Parameters.Add("@Cd_Paciente", SqlDbType.Int);
+                cmd.Parameters["@Cd_Paciente"].Value = filtro.Paciente.CdPaciente;
+
+                cmd.Parameters.Add("@Dt_Consulta", SqlDbType.DateTime);
+                cmd.Parameters["@Dt_Consulta"].Value = filtro.DtConsulta;
+
+
+                SqlDataReader DbReader = cmd.ExecuteReader();
+
+
+                if (DbReader.Read())
+                {
+                    Agendamento agendamento = new Agendamento();
+                    agendamento.CdAgendamento = DbReader.GetInt32(DbReader.GetOrdinal("Cd_Agendamento"));
+                    agendamento.Paciente.CdPaciente = DbReader.GetInt32(DbReader.GetOrdinal("Cd_Paciente"));
+                    agendamento.DtConsulta = DbReader.GetDateTime(DbReader.GetOrdinal("Dt_Consulta"));
+                    agendamento.Prestador.CdPrestador = DbReader.GetInt32(DbReader.GetOrdinal("Cd_Prestador"));
+                    agendamento.Usuario.UserName = DbReader.GetString(DbReader.GetOrdinal("UserName"));
+                    retorno = agendamento;
+
+                }
+                //fechando o leitor de resultados
+                DbReader.Close();
+                //liberando a memoria 
+                cmd.Dispose();
+                //fechando a conexao
+                this.fecharConexao();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Falha ao Pesquisar Agendamento " + ex.Message);
+            }
+
+            return retorno;
+            #endregion
+
+        }
+
+
+        public Agendamento PesqAgendamentoPrestador(Agendamento filtro)
+        {
+            #region Verificar se existe Agendamento pro prestador na mesma data e hora.
+            Agendamento retorno = new Agendamento();
+
+            try
+            {
+
+                this.abrirConexao();
+
+                string sql;
+
+                sql = "SELECT Cd_Agendamento,Dt_Consulta,Cd_Paciente,Cd_Prestador,UserName FROM Agendamento ";
+                sql += "WHERE Cd_Prestador = @Cd_Prestador AND Dt_Consulta = @Dt_Consulta";
+
+
+                SqlCommand cmd = new SqlCommand(sql, sqlConn);
+
+                cmd.Parameters.Add("@Cd_Prestador", SqlDbType.Int);
+                cmd.Parameters["@Cd_Prestador"].Value = filtro.Prestador.CdPrestador;
+
+                cmd.Parameters.Add("@Dt_Consulta", SqlDbType.DateTime);
+                cmd.Parameters["@Dt_Consulta"].Value = filtro.DtConsulta;
+
+
+                SqlDataReader DbReader = cmd.ExecuteReader();
+
+
+                if (DbReader.Read())
+                {
+                    Agendamento agendamento = new Agendamento();
+                    agendamento.CdAgendamento = DbReader.GetInt32(DbReader.GetOrdinal("Cd_Agendamento"));
+                    agendamento.Paciente.CdPaciente = DbReader.GetInt32(DbReader.GetOrdinal("Cd_Paciente"));
+                    agendamento.DtConsulta = DbReader.GetDateTime(DbReader.GetOrdinal("Dt_Consulta"));
+                    agendamento.Prestador.CdPrestador = DbReader.GetInt32(DbReader.GetOrdinal("Cd_Prestador"));
+                    agendamento.Usuario.UserName = DbReader.GetString(DbReader.GetOrdinal("UserName"));
+                    retorno = agendamento;
+
+                }
+                //fechando o leitor de resultados
+                DbReader.Close();
+                //liberando a memoria 
+                cmd.Dispose();
+                //fechando a conexao
+                this.fecharConexao();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Falha ao Pesquisar Agendamento por Prestador " + ex.Message);
+            }
+
+            return retorno;
+            #endregion
+
+        }
+
+
+
+
     }
 
 }
