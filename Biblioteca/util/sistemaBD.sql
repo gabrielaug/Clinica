@@ -44,7 +44,7 @@ CREATE TABLE Prestador (	Cd_Prestador INT PRIMARY KEY IDENTITY(1,1),
 							);
 
 CREATE TABLE Agendamento (	Cd_Agendamento INT PRIMARY KEY IDENTITY(1000,1),
-							Dt_Consulta Date NOT NULL,
+							Dt_Consulta Datetime NOT NULL,
 							Cd_Paciente INT REFERENCES Paciente (Cd_Paciente),
 							Cd_Prestador INT REFERENCES Prestador (Cd_Prestador),
 							UserName VARCHAR(20) FOREIGN KEY REFERENCES Usuario (UserName)
@@ -68,13 +68,13 @@ CREATE TABLE Procedimento (	Cd_Procedimento VARCHAR(50) PRIMARY KEY,  /* Codigo 
 							); 
 
 CREATE TABLE Atendimento (	Cd_Atendimento INT PRIMARY KEY IDENTITY(1,1),
-							Dt_Atendimento Date NOT NULL,
+							Dt_Atendimento Datetime NOT NULL,
 							Cd_Prestador INT REFERENCES Prestador (Cd_Prestador), /* Utilizado Novamente pois Pode ser Agendado para um Prestador e Atendido por Outro*/
 							Cd_Agendamento INT REFERENCES Agendamento (Cd_Agendamento), 
 							Cd_Procedimento VARCHAR(50) REFERENCES Procedimento (Cd_Procedimento),
 							Cd_Consulta INT  REFERENCES Tipo_Consulta (Cd_Consulta), /* falta verifica o que é e se fica em atendimento ou procedimento. (Alterando possivelmente o Modelo Conceitual.*/
 							UserName VARCHAR(20)  REFERENCES Usuario (UserName),
-							Dt_AtendFinalizado Date NOT NULL
+							Dt_AtendFinalizado Datetime NOT NULL
 							);
 
 END;
