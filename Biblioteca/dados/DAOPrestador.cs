@@ -61,8 +61,8 @@ namespace Biblioteca.dados
             {
                 //abrir a conexão
                 this.abrirConexao();
-                string sql = "INSERT INTO prestador ( nm_prestador, cpf, telefone, nr_conselho, sn_ativo";
-                sql += "VALUES(@nm_prestador, @cpf, @telefone, @nr_conselho,@sn_ativo)";
+                string sql = "INSERT INTO prestador ( nm_prestador, cpf, telefone, nr_conselho) ";
+                sql += " VALUES (@nm_prestador, @cpf, @telefone, @nr_conselho)";
                 //instrucao a ser executada
                 SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
@@ -77,9 +77,6 @@ namespace Biblioteca.dados
 
                 cmd.Parameters.Add("@nr_conselho", SqlDbType.VarChar);
                 cmd.Parameters["@nr_conselho"].Value = prestador.NrConselho;
-
-                cmd.Parameters.Add("@sn_ativo", SqlDbType.VarChar);
-                cmd.Parameters["@sn_ativo"].Value = prestador.SnAtivo;
 
 
                 //executando a instrucao 
