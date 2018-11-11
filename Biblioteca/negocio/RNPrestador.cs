@@ -7,7 +7,7 @@ using Biblioteca.Basicas;
 using Biblioteca.dados;
 using Biblioteca.interfaces;
 
-namespace Biblioteca.negocios
+namespace Biblioteca.negocio
 {
     public class RNPrestador : InterfacePrestador
 
