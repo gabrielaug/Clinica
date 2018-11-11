@@ -59,6 +59,9 @@
     <Compile Include="dados\DAOProcedimento.cs" />
     <Compile Include="dados\DAOTipoConsulta.cs" />
     <Compile Include="dados\DAOUsuario.cs" />
+	<Compile Include="dados\DAOAtendimento.cs" />
+	<Compile Include="dados\DAOConvenio.cs" />
+	<Compile Include="dados\DAOPrestador.cs" />
     <Compile Include="interfaces\InterfaceAgendamento.cs" />
     <Compile Include="interfaces\InterfaceAtendimento.cs" />
     <Compile Include="interfaces\InterfaceConvenio.cs" />
@@ -69,6 +72,8 @@
     <Compile Include="interfaces\InterfaceUsuario.cs" />
     <Compile Include="negocio\RNAgendamento.cs" />
     <Compile Include="negocio\RNPaciente.cs" />
+	<Compile Include="negocio\RNConvenio.cs" />
+	<Compile Include="negocio\RNPrestador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
