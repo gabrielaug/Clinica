@@ -11,7 +11,7 @@ namespace Biblioteca.interfaces
     {
         void gerar(Atendimento atendimento);
         void excluir(Atendimento atendimento);
-        void atulizar(Atendimento atendimento);
-        List<Atendimento> listarAtendimentos();
+        void atualizar(Atendimento atendimento);
+        List<Atendimento> listarAtendimentos(Atendimento atendimento);
     }
 }

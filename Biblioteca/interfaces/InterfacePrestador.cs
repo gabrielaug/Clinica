@@ -12,6 +12,7 @@ namespace Biblioteca.interfaces
         void cadastrar(Prestador prestador);
         void inativar(Prestador prestador);
         void atualizar(Prestador prestador);
-        List<Prestador> ListaPrestadores();
+        List<Prestador> ListaPrestadores(Prestador filtro);
+        bool VerificarCPF(Prestador prestador);
     }
 }

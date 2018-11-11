@@ -12,7 +12,6 @@ namespace Biblioteca.Basicas
 	{
 
 		private int cdAtendimento;
-		private DateTime hrAtendimento;
 		private DateTime dtAtendimento;
 		private Prestador prestador;
 		private Agendamento agendamento;
@@ -21,11 +20,17 @@ namespace Biblioteca.Basicas
 		private Usuario usuario;
 		private DateTime dtAtendFinalizado;
 
-        [DataMember(IsRequired = true)]
-        public int CdAtendimento { get => cdAtendimento; set => cdAtendimento = value; }
+        public Atendimento()
+        {
+           this.Prestador = new Prestador();
+           this.Agendamento = new Agendamento();
+           this.Procedimento = new Procedimento();
+           this.tipoConsulta = new TipoConsulta();
+           this.Usuario = new Usuario();
+        }
 
         [DataMember(IsRequired = true)]
-        public DateTime HrAtendimento { get => hrAtendimento; set => hrAtendimento = value; }
+        public int CdAtendimento { get => cdAtendimento; set => cdAtendimento = value; }
 
         [DataMember(IsRequired = true)]
         public DateTime DtAtendimento { get => dtAtendimento; set => dtAtendimento = value; }
@@ -47,5 +52,13 @@ namespace Biblioteca.Basicas
 
         [DataMember(IsRequired = true)]
         public DateTime DtAtendFinalizado { get => dtAtendFinalizado; set => dtAtendFinalizado = value; }
-	}
+
+        //public string ToString()
+        //{
+        //    string retorno;
+
+        //    retorno = "Codigo:" + this.cdAtendimento  + "Data Atendimento:" + this.DtAtendimento + "Data Atendimento Finalizado:" + this.dtAtendFinalizado +"Codigo Prestador:"+this.Prestador.CdPrestador+ "nome prestador:" + this.Prestador.NmPrestador + "paciente:" + this.Agendamento.Paciente.CdPaciente;
+        //    return retorno;
+        //}
+    }
 }

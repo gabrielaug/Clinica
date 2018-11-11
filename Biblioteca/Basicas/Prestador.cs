@@ -8,16 +8,18 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.Basicas
 {
-	[DataContract]
+    [DataContract]
 
-	public class Prestador
-	{
-		private int cdPrestador;
-		private string nmPrestador;
-		private string cpf;
-		private string nrConselho;
+    public class Prestador
+    {
+        private int cdPrestador;
+        private string nmPrestador;
+        private string cpf;
+        private string telefone;
+        private string nrConselho;
         private string snAtivo;
 
+        
 		[DataMember(IsRequired = true)]
 		public string NrConselho { get => nrConselho; set => nrConselho = value; }
 
@@ -33,5 +35,15 @@ namespace Biblioteca.Basicas
         [DataMember(IsRequired = true)]
         public string SnAtivo { get => snAtivo; set => snAtivo = value; }
 
+        [DataMember(IsRequired = true)]
+        public string Telefone { get => telefone; set => telefone = value; }
+
+        //public string ToString()
+        //{
+        //    string retorno;
+
+        //    retorno = this.cd_prestador + " " + this.nm_prestador + " " + this.cpf + " " + this.telefone + " " + this.nr_conselho + " " + this.sn_ativo + " " ;
+        //    return retorno;
+        //}
     }
 }
