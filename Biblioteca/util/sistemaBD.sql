@@ -74,7 +74,7 @@ CREATE TABLE Atendimento (	Cd_Atendimento INT PRIMARY KEY IDENTITY(1,1),
 							Cd_Procedimento VARCHAR(50) REFERENCES Procedimento (Cd_Procedimento),
 							Cd_Consulta INT  REFERENCES Tipo_Consulta (Cd_Consulta), /* falta verifica o que é e se fica em atendimento ou procedimento. (Alterando possivelmente o Modelo Conceitual.*/
 							UserName VARCHAR(20)  REFERENCES Usuario (UserName),
-							Dt_AtendFinalizado Datetime NOT NULL
+							Dt_AtendFinalizado Datetime
 							);
 
 END;
