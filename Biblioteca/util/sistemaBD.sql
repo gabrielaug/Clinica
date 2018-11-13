@@ -15,7 +15,7 @@ IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'sistemaBD')
 CREATE TABLE Usuario (	UserName VARCHAR(20) PRIMARY KEY,
 						Senha VARCHAR(50) NOT NULL,
 						Nome VARCHAR(100),
-						sn_Ativo CHAR(1) NOT NULL DEFAULT 'S'
+						sn_Ativo CHAR(1)  DEFAULT 'S'
 						);
 
 
@@ -40,7 +40,7 @@ CREATE TABLE Prestador (	Cd_Prestador INT PRIMARY KEY IDENTITY(1,1),
 							CPF VARCHAR(11) NOT NULL,
 							Telefone VARCHAR(15) NOT NULL,
 							Nr_Conselho VARCHAR(20) NOT NULL,
-							sn_Ativo CHAR(1) NOT NULL DEFAULT 'S'
+							sn_Ativo CHAR(1)  DEFAULT 'S'
 							);
 
 CREATE TABLE Agendamento (	Cd_Agendamento INT PRIMARY KEY IDENTITY(1000,1),
@@ -52,19 +52,19 @@ CREATE TABLE Agendamento (	Cd_Agendamento INT PRIMARY KEY IDENTITY(1000,1),
 
 CREATE TABLE Convenio (		Cd_Convenio INT PRIMARY KEY IDENTITY(1,1),
 							Nm_Convenio VARCHAR(100) NOT NULL,
-							sn_Ativo CHAR(1) NOT NULL DEFAULT 'S'
+							sn_Ativo CHAR(1)  DEFAULT 'S'
 							);
 
 CREATE TABLE Tipo_Consulta (Cd_Consulta INT PRIMARY KEY IDENTITY(1,1),
 							Nm_Consulta VARCHAR(100) NOT NULL,
-							sn_Ativo CHAR(1) NOT NULL DEFAULT 'S' 
+							sn_Ativo CHAR(1) DEFAULT 'S' 
 							);
 
 CREATE TABLE Procedimento (	Cd_Procedimento VARCHAR(50) PRIMARY KEY,  /* Codigo sem auto-incremento pois possui para cada Convenio*/
 							Nm_Procedimento VARCHAR(100) NOT NULL,
 							Valor Decimal(6,2),
 							Cd_Convenio INT REFERENCES Convenio (Cd_Convenio),
-							sn_Ativo CHAR(1) NOT NULL DEFAULT 'S'
+							sn_Ativo CHAR(1)  DEFAULT 'S'
 							); 
 
 CREATE TABLE Atendimento (	Cd_Atendimento INT PRIMARY KEY IDENTITY(1,1),
