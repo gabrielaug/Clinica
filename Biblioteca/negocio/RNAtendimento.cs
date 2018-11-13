@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.negocio
 {
-    public class RNAtendimento: InterfaceAtendimento
+    public class RNAtendimento : InterfaceAtendimento
     {
         DAOAtendimento dao;
 
@@ -30,12 +30,42 @@ namespace Biblioteca.negocio
 
         public void gerar(Atendimento atendimento)
         {
-            if()
+            if (ValidarAtributos(atendimento))
+            {
+                dao.gerar(atendimento);
+            }
+
         }
 
         public List<Atendimento> listarAtendimentos(Atendimento atendimento)
         {
-            throw new NotImplementedException();
+            return dao.listarAtendimentos(atendimento);
+        }
+        private bool ValidarAtributos(Atendimento atendimento)
+        {
+            #region Validação
+            if (atendimento.Prestador.CdPrestador == 0)
+            {
+                throw new Exception("Codigo do Prestador Invalido.");
+            }
+
+            if(atendimento.Agendamento.CdAgendamento == 0)
+            {
+                throw new Exception("Codigo de Agendamento Invalido.");
+            }
+
+            if(atendimento.TipoConsulta.CdConsulta == 0)
+            {
+                throw new Exception("Tipo de Consulta Invalida.");
+            }
+
+            if(atendimento.Usuario.UserName == null)
+            {
+                throw new Exception("Usuario Invalido.");
+            }
+            #endregion
+
+            return true;
         }
     }
 }

@@ -13,9 +13,10 @@ namespace Biblioteca.dados
 {
    public class DAOAgendamento : ConexaoSqlServer, InterfaceAgendamento
     {
-        #region Agendar Paciente
+        
         public void Agendar(Agendamento agendamento)
         {
+            #region Agendar atendimento
             try
             {
                 //abrir a conexão
@@ -48,9 +49,9 @@ namespace Biblioteca.dados
             {
                 throw new Exception("Erro ao tentar gerar agendamento " + ex.Message);
             }
-
+            #endregion
         }
-        #endregion
+
         public void Excluir(Agendamento agendamento)
         {
             #region Excluir Agendamento
@@ -79,6 +80,7 @@ namespace Biblioteca.dados
 
         public void Remarcar(Agendamento agendamento)
         {
+            #region Remarcar agendamento
             try
             {
                 //abrir a conexão
@@ -113,6 +115,8 @@ namespace Biblioteca.dados
             {
                 throw new Exception("Erro ao tentar Remarcar agendamento " + ex.Message);
             }
+            #endregion
+
         }
 
                
