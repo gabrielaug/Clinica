@@ -19,7 +19,7 @@ namespace Biblioteca.negocio
             dao = new DAOAgendamento();
         }
 
-        public void Agendar(Agendamento agendamento)
+        public void AgendarAgendamento(Agendamento agendamento)
         {
             #region Agendar atendimento
             Agendamento agend = new Agendamento();
@@ -29,7 +29,7 @@ namespace Biblioteca.negocio
             {
                 if(dao.PesqAgendamentoPrestador(agendamento).DtConsulta != agendamento.DtConsulta)
                 {
-                    dao.Agendar(agendamento);
+                    dao.AgendarAgendamento(agendamento);
                 }
                 else
                 {
@@ -44,7 +44,7 @@ namespace Biblioteca.negocio
             #endregion
         }
 
-        public void Excluir(Agendamento agendamento)
+        public void ExcluirAgendamento(Agendamento agendamento)
         {
             #region Excluir Agendamento se não possuir atendimento
             
@@ -56,7 +56,7 @@ namespace Biblioteca.negocio
 
                 atendimento.Agendamento = agendamento;
 
-                foreach (Atendimento i in daoA.listarAtendimentos(atendimento))
+                foreach (Atendimento i in daoA.ListarAtendimentos(atendimento))
                 {
                     agend = i.Agendamento;
                 }
@@ -67,7 +67,7 @@ namespace Biblioteca.negocio
                 }
                 else
                 {
-                    dao.Excluir(agendamento);
+                    dao.ExcluirAgendamento(agendamento);
                 }
 
             
@@ -79,7 +79,7 @@ namespace Biblioteca.negocio
             return dao.ListaAgendamentos(agendamento);
         }
 
-        public void Remarcar(Agendamento agendamento)
+        public void RemarcarAgendamento(Agendamento agendamento)
         {
             #region Remarcar Agendamento sem Atendimento
             Atendimento atendimento = new Atendimento();
@@ -89,7 +89,7 @@ namespace Biblioteca.negocio
 
             atendimento.Agendamento = agendamento;
 
-            foreach(Atendimento i in daoA.listarAtendimentos(atendimento))
+            foreach(Atendimento i in daoA.ListarAtendimentos(atendimento))
             {
                 agend = i.Agendamento;
             }
@@ -100,7 +100,7 @@ namespace Biblioteca.negocio
             }
             else
             {
-                dao.Remarcar(agendamento);
+                dao.RemarcarAgendamento(agendamento);
             }
 
             #endregion

@@ -14,7 +14,7 @@ namespace Biblioteca.dados
     public class DAOPrestador : ConexaoSqlServer, InterfacePrestador
     {
         #region Atualizar Prestador
-        public void atualizar(Prestador prestador)
+        public void AtualizarPrestador(Prestador prestador)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace Biblioteca.dados
         #endregion
 
         #region Cadastrar Prestador
-        public void cadastrar(Prestador prestador)
+        public void CadastrarPrestador(Prestador prestador)
         {
             try
             {
@@ -95,7 +95,7 @@ namespace Biblioteca.dados
         #endregion
 
         #region Inativar Prestador
-        public void inativar(Prestador prestador)
+        public void InativarPrestador(Prestador prestador)
         {
             try
             {

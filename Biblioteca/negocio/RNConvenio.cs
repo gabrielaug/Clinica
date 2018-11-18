@@ -19,7 +19,7 @@ namespace Biblioteca.negocio
         }
 
 
-        public void cadastrar (Convenio convenio)
+        public void CadastrarConvenio(Convenio convenio)
         {
             if (convenio != null)
             {
@@ -28,7 +28,7 @@ namespace Biblioteca.negocio
                     try
                     {
                         ValidarAtributos(convenio);
-                        dao.cadastrar(convenio);
+                        dao.CadastrarConvenio(convenio);
                     }
                     catch
                     {
@@ -41,13 +41,13 @@ namespace Biblioteca.negocio
             
         }
 
-        public void inativar (Convenio convenio)
+        public void InativarConvenio(Convenio convenio)
         {
             if (convenio.SnAtivo == "S")
             {
                 try
                 {
-                    dao.inativar(convenio);
+                    dao.InativarConvenio(convenio);
                 }
                 catch
                 {
@@ -56,10 +56,10 @@ namespace Biblioteca.negocio
             }
         }
 
-        public List<Convenio> listarConvenios(Convenio filtro)
+        public List<Convenio> ListarConvenios(Convenio filtro)
         {
 
-            return dao.listarConvenios(filtro);
+            return dao.ListarConvenios(filtro);
         }
 
 

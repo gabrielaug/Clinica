@@ -19,14 +19,14 @@ namespace Biblioteca.negocio
             dao = new DAOPaciente();
         }
 
-        public void Alterar(Paciente paciente)
+        public void AlterarPaciente(Paciente paciente)
         {
             if(paciente.CdPaciente > 0)
             {
                 try
                 {
                     ValidarAtributos(paciente);
-                    dao.Alterar(paciente);
+                    dao.AlterarPaciente(paciente);
                 }
                 catch
                 {
@@ -37,7 +37,7 @@ namespace Biblioteca.negocio
             
         }
 
-        public void Cadastrar(Paciente paciente)
+        public void CadastrarPaciente(Paciente paciente)
         {
 
             if (paciente != null)
@@ -48,7 +48,7 @@ namespace Biblioteca.negocio
                     try
                     {
                         ValidarAtributos(paciente);
-                        dao.Cadastrar(paciente);
+                        dao.CadastrarPaciente(paciente);
                     }
                     catch
                     {

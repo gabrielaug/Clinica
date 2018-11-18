@@ -9,8 +9,8 @@ namespace Biblioteca.interfaces
 {
     public interface InterfaceProcedimento
     {
-        void Adicionar(Procedimento procedimento);
-        void Atuaizar(Procedimento procedimento);
+        void AdicionarProcedimento(Procedimento procedimento);
+        void AtualizarProcedimento(Procedimento procedimento);
 
         List<Procedimento> ListarProcedimento(Procedimento procedimento);
     }

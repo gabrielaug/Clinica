@@ -9,9 +9,9 @@ namespace Biblioteca.interfaces
 {
     public interface InterfacePrestador
     {
-        void cadastrar(Prestador prestador);
-        void inativar(Prestador prestador);
-        void atualizar(Prestador prestador);
+        void CadastrarPrestador(Prestador prestador);
+        void InativarPrestador(Prestador prestador);
+        void AtualizarPrestador(Prestador prestador);
         List<Prestador> ListaPrestadores(Prestador filtro);
         bool VerificarCPF(Prestador prestador);
     }

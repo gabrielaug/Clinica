@@ -10,11 +10,11 @@ namespace Biblioteca.interfaces
   
      public interface InterfaceAgendamento
     {
-        void Agendar(Agendamento agendamento);
+        void AgendarAgendamento(Agendamento agendamento);
 
-        void Remarcar(Agendamento agendamento);
+        void RemarcarAgendamento(Agendamento agendamento);
 
-        void Excluir(Agendamento agendamento);
+        void ExcluirAgendamento(Agendamento agendamento);
 
         List<Agendamento> ListaAgendamentos(Agendamento agendamento); 
     }

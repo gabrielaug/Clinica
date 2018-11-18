@@ -9,8 +9,8 @@ namespace Biblioteca.interfaces
 {
     public interface InterfaceConvenio
     {
-        void cadastrar(Convenio convenio);
-        void inativar(Convenio convenio);
-        List<Convenio> listarConvenios(Convenio filtro);
+        void CadastrarConvenio(Convenio convenio);
+        void InativarConvenio(Convenio convenio);
+        List<Convenio> ListarConvenios(Convenio filtro);
     }
 }

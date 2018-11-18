@@ -18,28 +18,45 @@ namespace Biblioteca.negocio
             dao = new DAOAtendimento();
         }
 
-        public void atualizar(Atendimento atendimento)
+        public void AtualizarAtendimento(Atendimento atendimento)
         {
-            throw new NotImplementedException();
+            dao.AtualizarAtendimento(atendimento);
         }
 
-        public void excluir(Atendimento atendimento)
+        public void ExcluirAtendimento(Atendimento atendimento)
         {
-            throw new NotImplementedException();
+            Atendimento atend = new Atendimento();
+
+            atend = dao.ListarAtendimentos(atendimento).Last();
+
+            if (atend.CdAtendimento == atendimento.CdAtendimento)
+            {
+                if(atend.Procedimento.CdProcedimento.Trim().Equals("") || atend.Procedimento.CdProcedimento == null)
+                {
+                    dao.ExcluirAtendimento(atendimento);
+                }
+                else
+                {
+                    throw new Exception("Erro ao tentar excluir atendimento com Procedimento.");
+                }
+                
+
+            }
+            
         }
 
-        public void gerar(Atendimento atendimento)
+        public void GerarAtendimento(Atendimento atendimento)
         {
             if (ValidarAtributos(atendimento))
             {
-                dao.gerar(atendimento);
+                dao.GerarAtendimento(atendimento);
             }
 
         }
 
-        public List<Atendimento> listarAtendimentos(Atendimento atendimento)
+        public List<Atendimento> ListarAtendimentos(Atendimento atendimento)
         {
-            return dao.listarAtendimentos(atendimento);
+            return dao.ListarAtendimentos(atendimento);
         }
         private bool ValidarAtributos(Atendimento atendimento)
         {
