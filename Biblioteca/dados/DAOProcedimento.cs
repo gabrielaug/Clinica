@@ -13,7 +13,7 @@ namespace Biblioteca.dados
 {
     public class DAOProcedimento : ConexaoSqlServer, InterfaceProcedimento
     {
-        public void Atuaizar(Procedimento procedimento)
+        public void AtualizarProcedimento(Procedimento procedimento)
         {
             #region Atualizar Procedimento
             try
@@ -62,7 +62,7 @@ namespace Biblioteca.dados
             #endregion 
         }
 
-        public void Adicionar(Procedimento procedimento)
+        public void AdicionarProcedimento(Procedimento procedimento)
         {
 
             #region Adicionar Procedimento

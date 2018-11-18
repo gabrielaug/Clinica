@@ -14,7 +14,7 @@ namespace Biblioteca.dados
     public class DAOAtendimento : ConexaoSqlServer, InterfaceAtendimento
     {
         
-        public void atualizar(Atendimento atendimento)
+        public void AtualizarAtendimento(Atendimento atendimento)
         {
             #region Atualizar Atendimento
             try
@@ -66,7 +66,7 @@ namespace Biblioteca.dados
         }
 
 
-        public void excluir(Atendimento atendimento){
+        public void ExcluirAtendimento(Atendimento atendimento){
             #region Excluir Atendimento
             try
             {
@@ -92,7 +92,7 @@ namespace Biblioteca.dados
         }
 
 
-        public void gerar(Atendimento atendimento)
+        public void GerarAtendimento(Atendimento atendimento)
         {
             #region Atender Paciente
             try
@@ -141,7 +141,7 @@ namespace Biblioteca.dados
 
 
         
-        public List<Atendimento> listarAtendimentos(Atendimento filtro)
+        public List<Atendimento> ListarAtendimentos(Atendimento filtro)
         {
             #region Listar ou consultar atendimentos
             List<Atendimento> retorno = new List<Atendimento>();

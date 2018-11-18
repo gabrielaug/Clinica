@@ -14,7 +14,7 @@ namespace Biblioteca.dados
     public class DAOUsuario : ConexaoSqlServer, InterfaceUsuario
     {
 
-        public void cadastrar(Usuario usuario)
+        public void CadastrarUsuario(Usuario usuario)
         {
             #region Cadastro de Usuario
             try
@@ -51,7 +51,7 @@ namespace Biblioteca.dados
     #endregion
 }
 
-        public void alterar(Usuario usuario)
+        public void AlterarUsuario(Usuario usuario)
         {
             #region Alterar Usuario
             try
@@ -108,7 +108,7 @@ namespace Biblioteca.dados
 
         }
 
-        public List<Usuario> listarUsuarios(Usuario filtro)
+        public List<Usuario> ListarUsuarios(Usuario filtro)
         {
             #region Listar Usuario
             List<Usuario> retorno = new List<Usuario>();

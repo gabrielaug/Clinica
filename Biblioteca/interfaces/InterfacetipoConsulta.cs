@@ -9,9 +9,8 @@ namespace Biblioteca.interfaces
 {
     public interface InterfaceTipoConsulta
     {
-        void inserir(TipoConsulta tipoConsulta);
-        //void atualizar(TipoConsulta tipoConsulta);
-        void inativar(TipoConsulta tipoConsulta);
-        List<TipoConsulta> listarTipoConsulta(TipoConsulta filtro);
+        void InserirTipoConsulta(TipoConsulta tipoConsulta);
+        void InativarTipoConsulta(TipoConsulta tipoConsulta);
+        List<TipoConsulta> ListarTipoConsulta(TipoConsulta filtro);
     }
 }

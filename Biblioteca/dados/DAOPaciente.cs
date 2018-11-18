@@ -14,7 +14,7 @@ namespace Biblioteca.dados
     public class DAOPaciente : ConexaoSqlServer, InterfacePaciente
     {
         
-        public void Alterar(Paciente paciente)
+        public void AlterarPaciente(Paciente paciente)
         {
             #region Alterar o Paciente
             try
@@ -85,7 +85,7 @@ namespace Biblioteca.dados
             #endregion
         }
 
-        public void Cadastrar(Paciente paciente)
+        public void CadastrarPaciente(Paciente paciente)
         {
         #region Cadastro de Paciente
             try

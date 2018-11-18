@@ -15,7 +15,7 @@ namespace Biblioteca.dados
     {
 
 
-        public void cadastrar(Convenio convenio)
+        public void CadastrarConvenio(Convenio convenio)
         {
             #region Inserir convênio
             try
@@ -49,7 +49,7 @@ namespace Biblioteca.dados
         #endregion
 
         #region Inativar convenio
-        public void inativar(Convenio convenio)
+        public void InativarConvenio(Convenio convenio)
         {
             try
             {
@@ -83,7 +83,7 @@ namespace Biblioteca.dados
         }
         
         #region Listar Convênio
-        public List<Convenio> listarConvenios(Convenio filtro)
+        public List<Convenio> ListarConvenios(Convenio filtro)
         {
             List<Convenio> retorno = new List<Convenio>();
             try

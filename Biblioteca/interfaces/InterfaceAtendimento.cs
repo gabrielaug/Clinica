@@ -9,9 +9,9 @@ namespace Biblioteca.interfaces
 {
     public interface InterfaceAtendimento
     {
-        void gerar(Atendimento atendimento);
-        void excluir(Atendimento atendimento);
-        void atualizar(Atendimento atendimento);
-        List<Atendimento> listarAtendimentos(Atendimento atendimento);
+        void GerarAtendimento(Atendimento atendimento);
+        void ExcluirAtendimento(Atendimento atendimento);
+        void AtualizarAtendimento(Atendimento atendimento);
+        List<Atendimento> ListarAtendimentos(Atendimento atendimento);
     }
 }

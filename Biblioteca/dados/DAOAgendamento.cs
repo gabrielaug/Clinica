@@ -14,7 +14,7 @@ namespace Biblioteca.dados
    public class DAOAgendamento : ConexaoSqlServer, InterfaceAgendamento
     {
         
-        public void Agendar(Agendamento agendamento)
+        public void AgendarAgendamento(Agendamento agendamento)
         {
             #region Agendar atendimento
             try
@@ -52,7 +52,7 @@ namespace Biblioteca.dados
             #endregion
         }
 
-        public void Excluir(Agendamento agendamento)
+        public void ExcluirAgendamento(Agendamento agendamento)
         {
             #region Excluir Agendamento
             try
@@ -78,7 +78,7 @@ namespace Biblioteca.dados
             #endregion
         }
 
-        public void Remarcar(Agendamento agendamento)
+        public void RemarcarAgendamento(Agendamento agendamento)
         {
             #region Remarcar agendamento
             try

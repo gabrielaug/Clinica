@@ -75,6 +75,9 @@
     <Compile Include="negocio\RNPaciente.cs" />
     <Compile Include="negocio\RNConvenio.cs" />
     <Compile Include="negocio\RNPrestador.cs" />
+    <Compile Include="negocio\RNProcedimento.cs" />
+	<Compile Include="negocio\RNTipoConsulta.cs" />
+	<Compile Include="negocio\RNUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

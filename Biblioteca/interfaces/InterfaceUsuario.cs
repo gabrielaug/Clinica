@@ -9,8 +9,8 @@ namespace Biblioteca.interfaces
 {
     public interface InterfaceUsuario
     {
-        void cadastrar(Usuario usuario);
-        void alterar(Usuario usuario);
-        List<Usuario> listarUsuarios(Usuario filtro);
+        void CadastrarUsuario(Usuario usuario);
+        void AlterarUsuario(Usuario usuario);
+        List<Usuario> ListarUsuarios(Usuario filtro);
     }
 }

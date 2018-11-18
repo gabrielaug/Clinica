@@ -13,7 +13,7 @@ namespace Biblioteca.dados
 {
     public  class DAOTipoConsulta : ConexaoSqlServer, InterfaceTipoConsulta
     {
-        public void inativar(TipoConsulta tipoConsulta)
+        public void InativarTipoConsulta(TipoConsulta tipoConsulta)
         {
 
             #region Inativar Tipo de Consulta
@@ -50,7 +50,7 @@ namespace Biblioteca.dados
 
         }
 
-        public void inserir(TipoConsulta tipoConsulta)
+        public void InserirTipoConsulta(TipoConsulta tipoConsulta)
         {
 
             #region Inserir Tipo da Consulta
@@ -84,7 +84,7 @@ namespace Biblioteca.dados
             #endregion
         }
 
-        public List<TipoConsulta> listarTipoConsulta(TipoConsulta filtro)
+        public List<TipoConsulta> ListarTipoConsulta(TipoConsulta filtro)
         {
             try
             {

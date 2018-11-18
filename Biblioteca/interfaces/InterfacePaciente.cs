@@ -10,9 +10,9 @@ namespace Biblioteca.interfaces
     public interface InterfacePaciente
     {
 
-        void Cadastrar(Paciente paciente);
+        void CadastrarPaciente(Paciente paciente);
 
-        void Alterar(Paciente paciente);
+        void AlterarPaciente(Paciente paciente);
 
         List<Paciente> ListaPaciente(Paciente filtro);
 

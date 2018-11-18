@@ -22,7 +22,7 @@ namespace Biblioteca.negocio
         }
 
 
-        public void cadastrar(Usuario usuario)
+        public void CadastrarUsuario(Usuario usuario)
         {
             if (usuario != null)
             {
@@ -31,7 +31,7 @@ namespace Biblioteca.negocio
                 try
                 {
                     ValidarAtributos(usuario);
-                    dao.cadastrar(usuario);
+                    dao.CadastrarUsuario(usuario);
                 }
                 catch
                 {
@@ -42,7 +42,7 @@ namespace Biblioteca.negocio
             
         }
 
-        public void alterar(Usuario usuario)
+        public void AlterarUsuario(Usuario usuario)
         {
             if (usuario != null)
             {
@@ -51,7 +51,7 @@ namespace Biblioteca.negocio
                 try
                 {
                     ValidarAtributos(usuario);
-                    dao.alterar(usuario);
+                    dao.AlterarUsuario(usuario);
                 }
                 catch
                 {
@@ -62,9 +62,9 @@ namespace Biblioteca.negocio
 
         }
 
-        public List<Usuario> listarUsuarios(Usuario filtro)
+        public List<Usuario> ListarUsuarios(Usuario filtro)
         {
-            return dao.listarUsuarios(filtro);
+            return dao.ListarUsuarios(filtro);
         }
 
 

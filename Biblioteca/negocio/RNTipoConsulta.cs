@@ -20,13 +20,13 @@ namespace Biblioteca.negocio
 
         }
 
-        public void inativar(TipoConsulta tipoConsulta)
+        public void InativarTipoConsulta(TipoConsulta tipoConsulta)
         {
             if (tipoConsulta.SnAtivo == "S")
             {
                 try
                 {
-                    dao.inativar(tipoConsulta);
+                    dao.InativarTipoConsulta(tipoConsulta);
                 }
                 catch
                 {
@@ -35,7 +35,7 @@ namespace Biblioteca.negocio
             }
         }
 
-        public void inserir(TipoConsulta tipoConsulta)
+        public void InserirTipoConsulta(TipoConsulta tipoConsulta)
         {
             if (tipoConsulta != null)
             {
@@ -43,7 +43,7 @@ namespace Biblioteca.negocio
                     try
                     {
                         ValidarAtributos(tipoConsulta);
-                        dao.inserir(tipoConsulta);
+                        dao.InserirTipoConsulta(tipoConsulta);
                     }
                     catch
                     {
@@ -60,9 +60,9 @@ namespace Biblioteca.negocio
 
         }
 
-        public List<TipoConsulta> ListaPrestadores(TipoConsulta filtro)
+        public List<TipoConsulta> ListarTipoConsulta(TipoConsulta filtro)
         {
-            return dao.listarTipoConsulta(filtro);
+            return dao.ListarTipoConsulta(filtro);
         }
 
         bool ValidarAtributos(TipoConsulta d)

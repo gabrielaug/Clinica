@@ -19,13 +19,13 @@ namespace Biblioteca.negocio
                dao = new DAOPrestador();
         }
 
-        public void inativar(Prestador prestador)
+        public void InativarPrestador(Prestador prestador)
         {
             if (prestador.SnAtivo == "S")
             {
                 try
                 {
-                    dao.inativar(prestador);
+                    dao.InativarPrestador(prestador);
                 }
                 catch
                 {
@@ -35,7 +35,7 @@ namespace Biblioteca.negocio
 
         }
 
-        public void atualizar(Prestador prestador)
+        public void AtualizarPrestador(Prestador prestador)
         {
                 
             if (prestador.CdPrestador > 0)
@@ -47,7 +47,7 @@ namespace Biblioteca.negocio
                     //  
                     
                     // ValidarAtributos(prestador);
-                    dao.atualizar(prestador);
+                    dao.AtualizarPrestador(prestador);
 
                 }
                 catch
@@ -59,7 +59,7 @@ namespace Biblioteca.negocio
 
         }
 
-        public void cadastrar(Prestador prestador)
+        public void CadastrarPrestador(Prestador prestador)
         {
             if (prestador != null)
             {
@@ -69,7 +69,7 @@ namespace Biblioteca.negocio
                     try
                     {
                         ValidarAtributos(prestador);
-                        dao.cadastrar(prestador);
+                        dao.CadastrarPrestador(prestador);
                     }
                     catch
                     {
