@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:57569/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" />
+  <xs:element name="AgendarAgendamento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="agendamento" nillable="true" type="q1:Agendamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgendarAgendamentoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemarcarAgendamento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="agendamento" nillable="true" type="q2:Agendamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemarcarAgendamentoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExcluirAgendamento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="agendamento" nillable="true" type="q3:Agendamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExcluirAgendamentoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaAgendamentos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="agendamento" nillable="true" type="q4:Agendamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaAgendamentosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="ListaAgendamentosResult" nillable="true" type="q5:ArrayOfAgendamento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GerarAtendimento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="atendimento" nillable="true" type="q6:Atendimento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GerarAtendimentoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExcluirAtendimento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="atendimento" nillable="true" type="q7:Atendimento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExcluirAtendimentoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarAtendimento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="atendimento" nillable="true" type="q8:Atendimento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarAtendimentoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarAtendimentos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="atendimento" nillable="true" type="q9:Atendimento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarAtendimentosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="ListarAtendimentosResult" nillable="true" type="q10:ArrayOfAtendimento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarConvenio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="convenio" nillable="true" type="q11:Convenio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarConvenioResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InativarConvenio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="convenio" nillable="true" type="q12:Convenio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InativarConvenioResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarConvenios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="filtro" nillable="true" type="q13:Convenio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarConveniosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="ListarConveniosResult" nillable="true" type="q14:ArrayOfConvenio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarPaciente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="paciente" nillable="true" type="q15:Paciente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarPacienteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarPaciente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="paciente" nillable="true" type="q16:Paciente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarPacienteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaPaciente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="filtro" nillable="true" type="q17:Paciente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaPacienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="ListaPacienteResult" nillable="true" type="q18:ArrayOfPaciente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarPrestador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="prestador" nillable="true" type="q19:Prestador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarPrestadorResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InativarPrestador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="prestador" nillable="true" type="q20:Prestador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InativarPrestadorResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarPrestador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="prestador" nillable="true" type="q21:Prestador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtualizarPrestadorResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaPrestadores">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="filtro" nillable="true" type="q22:Prestador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaPrestadoresResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="ListaPrestadoresResult" nillable="true" type="q23:ArrayOfPrestador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdicionarProcedimento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="procedimento" nillable="true" type="q24:Procedimento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdicionarProcedimentoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtuaizarProcedimento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="procedimento" nillable="true" type="q25:Procedimento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AtuaizarProcedimentoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarProcedimento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="procedimento" nillable="true" type="q26:Procedimento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarProcedimentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="ListarProcedimentoResult" nillable="true" type="q27:ArrayOfProcedimento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirTipoConsulta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="tipoConsulta" nillable="true" type="q28:TipoConsulta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirTipoConsultaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InativarTipoConsulta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="tipoConsulta" nillable="true" type="q29:TipoConsulta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InativarTipoConsultaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarTipoConsulta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="filtro" nillable="true" type="q30:TipoConsulta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarTipoConsultaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="ListarTipoConsultaResult" nillable="true" type="q31:ArrayOfTipoConsulta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="usuario" nillable="true" type="q32:Usuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CadastrarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="usuario" nillable="true" type="q33:Usuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarUsuarios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="filtro" nillable="true" type="q34:Usuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarUsuariosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" minOccurs="0" name="ListarUsuariosResult" nillable="true" type="q35:ArrayOfUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
