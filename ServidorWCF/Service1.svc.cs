@@ -7,6 +7,7 @@ using System.ServiceModel.Web;
 using System.Text;
 using Biblioteca.Basicas;
 using Biblioteca.dados;
+using Biblioteca.negocio;
 
 namespace ServidorWCF
 {
@@ -16,164 +17,164 @@ namespace ServidorWCF
     {
         public void AdicionarProcedimento(Procedimento procedimento)
         {
-            DAOProcedimento dao = new DAOProcedimento();
-            dao.AdicionarProcedimento(procedimento);
+            RNProcedimento rn = new RNProcedimento();
+            rn.AdicionarProcedimento(procedimento);
         }
 
         public void AgendarAgendamento(Agendamento agendamento)
         {
-            DAOAgendamento dao = new DAOAgendamento();
-            dao.AgendarAgendamento(agendamento);
+            RNAgendamento rn = new RNAgendamento();
+            rn.AgendarAgendamento(agendamento);
         }
 
         public void AlterarPaciente(Paciente paciente)
         {
-            DAOPaciente dao = new DAOPaciente();
-            dao.AlterarPaciente(paciente);
+            RNPaciente rn = new RNPaciente();
+            rn.AlterarPaciente(paciente);
         }
 
         public void AlterarUsuario(Usuario usuario)
         {
-            DAOUsuario dao = new DAOUsuario();
-            dao.AlterarUsuario(usuario);
+            RNUsuario rn = new RNUsuario();
+            rn.AlterarUsuario(usuario);
         }
 
         public void AtuaizarProcedimento(Procedimento procedimento)
         {
-            DAOProcedimento dao = new DAOProcedimento();
-            dao.AtualizarProcedimento(procedimento);
+            RNProcedimento rn = new RNProcedimento();
+            rn.AtualizarProcedimento(procedimento);
         }
 
         public void AtualizarAtendimento(Atendimento atendimento)
         {
-            DAOAtendimento dao = new DAOAtendimento();
-            dao.AtualizarAtendimento(atendimento);
+            RNAtendimento rn = new RNAtendimento();
+            rn.AtualizarAtendimento(atendimento);
         }
 
         public void AtualizarPrestador(Prestador prestador)
         {
-            DAOPrestador dao = new DAOPrestador();
-            dao.AtualizarPrestador(prestador);
+            RNPrestador rn = new RNPrestador();
+            rn.AtualizarPrestador(prestador);
         }
 
         public void CadastrarConvenio(Convenio convenio)
         {
-            DAOConvenio dao = new DAOConvenio();
-            dao.CadastrarConvenio(convenio);
+            RNConvenio rn = new RNConvenio();
+            rn.CadastrarConvenio(convenio);
         }
 
         public void CadastrarPaciente(Paciente paciente)
         {
-            DAOPaciente dao = new DAOPaciente();
-            dao.CadastrarPaciente(paciente);
+            RNPaciente rn = new RNPaciente();
+            rn.CadastrarPaciente(paciente);
         }
 
         public void CadastrarPrestador(Prestador prestador)
         {
-            DAOPrestador dao = new DAOPrestador();
-            dao.CadastrarPrestador(prestador);
+            RNPrestador rn = new RNPrestador();
+            rn.CadastrarPrestador(prestador);
         }
 
         public void CadastrarUsuario(Usuario usuario)
         {
-            DAOUsuario dao = new DAOUsuario();
-            dao.CadastrarUsuario(usuario);
+            RNUsuario rn = new RNUsuario();
+            rn.CadastrarUsuario(usuario);
         }
 
         public void ExcluirAgendamento(Agendamento agendamento)
         {
-            DAOAgendamento dao = new DAOAgendamento();
-            dao.ExcluirAgendamento(agendamento);
+            RNAgendamento rn = new RNAgendamento();
+            rn.ExcluirAgendamento(agendamento);
         }
 
         public void ExcluirAtendimento(Atendimento atendimento)
         {
-            DAOAtendimento dao = new DAOAtendimento();
-            dao.ExcluirAtendimento(atendimento);
+            RNAtendimento rn = new RNAtendimento();
+            rn.ExcluirAtendimento(atendimento);
         }
 
         public void GerarAtendimento(Atendimento atendimento)
         {
-            DAOAtendimento dao = new DAOAtendimento();
-            dao.GerarAtendimento(atendimento);
+            RNAtendimento rn = new RNAtendimento();
+            rn.GerarAtendimento(atendimento);
         }
 
         public void InativarConvenio(Convenio convenio)
         {
-            DAOConvenio dao = new DAOConvenio();
-            dao.InativarConvenio(convenio);
+            RNConvenio rn = new RNConvenio();
+            rn.InativarConvenio(convenio);
         }
 
         public void InativarPrestador(Prestador prestador)
         {
-            DAOPrestador dao = new DAOPrestador();
-            dao.InativarPrestador(prestador);
+            RNPrestador rn = new RNPrestador();
+            rn.InativarPrestador(prestador);
         }
 
         public void InativarTipoConsulta(TipoConsulta tipoConsulta)
         {
-            DAOTipoConsulta dao = new DAOTipoConsulta();
-            dao.InativarTipoConsulta(tipoConsulta);
+            RNTipoConsulta rn = new RNTipoConsulta();
+            rn.InativarTipoConsulta(tipoConsulta);
         }
 
         public void InserirTipoConsulta(TipoConsulta tipoConsulta)
         {
-            DAOTipoConsulta dao = new DAOTipoConsulta();
-            dao.InserirTipoConsulta(tipoConsulta);
+            RNTipoConsulta rn = new RNTipoConsulta();
+            rn.InserirTipoConsulta(tipoConsulta);
         }
 
         public List<Agendamento> ListaAgendamentos(Agendamento agendamento)
         {
-            DAOAgendamento dao = new DAOAgendamento();
-            return dao.ListaAgendamentos(agendamento);
+            RNAgendamento rn = new RNAgendamento();
+            return rn.ListaAgendamentos(agendamento);
         }
 
         public List<Paciente> ListaPaciente(Paciente filtro)
         {
-            DAOPaciente dao = new DAOPaciente();
-            return dao.ListaPaciente(filtro);
+            RNPaciente rn = new RNPaciente();
+            return rn.ListaPaciente(filtro);
         }
 
         public List<Prestador> ListaPrestadores(Prestador filtro)
         {
-            DAOPrestador dao = new DAOPrestador();
-            return dao.ListaPrestadores(filtro);
+            RNPrestador rn = new RNPrestador();
+            return rn.ListaPrestadores(filtro);
         }
 
         public List<Atendimento> ListarAtendimentos(Atendimento atendimento)
         {
-            DAOAtendimento dao = new DAOAtendimento();
-            return dao.ListarAtendimentos(atendimento);
+            RNAtendimento rn = new RNAtendimento();
+            return rn.ListarAtendimentos(atendimento);
         }
 
         public List<Convenio> ListarConvenios(Convenio filtro)
         {
-            DAOConvenio dao = new DAOConvenio();
-            return dao.ListarConvenios(filtro);
+            RNConvenio rn = new RNConvenio();
+            return rn.ListarConvenios(filtro);
         }
 
         public List<Procedimento> ListarProcedimento(Procedimento procedimento)
         {
-            DAOProcedimento dao = new DAOProcedimento();
-            return dao.ListarProcedimento(procedimento);
+            RNProcedimento rn = new RNProcedimento();
+            return rn.ListarProcedimento(procedimento);
         }
 
         public List<TipoConsulta> ListarTipoConsulta(TipoConsulta filtro)
         {
-            DAOTipoConsulta dao = new DAOTipoConsulta();
-            return dao.ListarTipoConsulta(filtro);
+            RNTipoConsulta rn = new RNTipoConsulta();
+            return rn.ListarTipoConsulta(filtro);
         }
 
         public List<Usuario> ListarUsuarios(Usuario filtro)
         {
-            DAOUsuario dao = new DAOUsuario();
-            return dao.ListarUsuarios(filtro);
+            RNUsuario rn = new RNUsuario();
+            return rn.ListarUsuarios(filtro);
         }
 
         public void RemarcarAgendamento(Agendamento agendamento)
         {
-            DAOAgendamento dao = new DAOAgendamento();
-            dao.RemarcarAgendamento(agendamento);
+            RNAgendamento rn = new RNAgendamento();
+            rn.RemarcarAgendamento(agendamento);
         }
     }
 }
