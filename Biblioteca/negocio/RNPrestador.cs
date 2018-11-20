@@ -21,7 +21,7 @@ namespace Biblioteca.negocio
 
         public void InativarPrestador(Prestador prestador)
         {
-            if (prestador.SnAtivo == "S")
+            if (prestador.SnAtivo == "N")
             {
                 try
                 {
@@ -40,7 +40,6 @@ namespace Biblioteca.negocio
                 
             if (prestador.CdPrestador > 0)
             {
-                dao.VerificarCPF(prestador);
                 try
                 {
 
@@ -65,7 +64,12 @@ namespace Biblioteca.negocio
             {
                 if (VerificarCPF(prestador))
                 {
+                    throw new Exception("CPF já cadastrado.");
+                   
 
+                }
+                else
+                {
                     try
                     {
                         ValidarAtributos(prestador);
@@ -76,10 +80,6 @@ namespace Biblioteca.negocio
 
                     }
 
-                }
-                else
-                {
-                    throw new Exception("CPF já cadastrado.");
                 }
 
             }
