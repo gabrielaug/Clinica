@@ -77,6 +77,7 @@
             this.prestadorToolStripMenuItem.Name = "prestadorToolStripMenuItem";
             this.prestadorToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.prestadorToolStripMenuItem.Text = "Prestador";
+            this.prestadorToolStripMenuItem.Click += new System.EventHandler(this.prestadorToolStripMenuItem_Click);
             // 
             // convenioToolStripMenuItem
             // 

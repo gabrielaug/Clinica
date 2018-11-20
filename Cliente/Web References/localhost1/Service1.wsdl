@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:57569/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:57569/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:57569/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Biblioteca.Basicas" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_AgendarAgendamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgendarAgendamento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AgendarAgendamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgendarAgendamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RemarcarAgendamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemarcarAgendamento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RemarcarAgendamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemarcarAgendamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExcluirAgendamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirAgendamento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExcluirAgendamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirAgendamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListaAgendamentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaAgendamentos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListaAgendamentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaAgendamentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GerarAtendimento_InputMessage">
+    <wsdl:part name="parameters" element="tns:GerarAtendimento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GerarAtendimento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GerarAtendimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExcluirAtendimento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirAtendimento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExcluirAtendimento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirAtendimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AtualizarAtendimento_InputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarAtendimento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AtualizarAtendimento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarAtendimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarAtendimentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAtendimentos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarAtendimentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAtendimentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CadastrarConvenio_InputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarConvenio" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CadastrarConvenio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarConvenioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InativarConvenio_InputMessage">
+    <wsdl:part name="parameters" element="tns:InativarConvenio" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InativarConvenio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InativarConvenioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarConvenios_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarConvenios" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarConvenios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarConveniosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CadastrarPaciente_InputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarPaciente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CadastrarPaciente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AlterarPaciente_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarPaciente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AlterarPaciente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListaPaciente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPaciente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListaPaciente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CadastrarPrestador_InputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarPrestador" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CadastrarPrestador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarPrestadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InativarPrestador_InputMessage">
+    <wsdl:part name="parameters" element="tns:InativarPrestador" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InativarPrestador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InativarPrestadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AtualizarPrestador_InputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarPrestador" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AtualizarPrestador_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AtualizarPrestadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListaPrestadores_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPrestadores" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListaPrestadores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPrestadoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AdicionarProcedimento_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdicionarProcedimento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AdicionarProcedimento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdicionarProcedimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AtuaizarProcedimento_InputMessage">
+    <wsdl:part name="parameters" element="tns:AtuaizarProcedimento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AtuaizarProcedimento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AtuaizarProcedimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarProcedimento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarProcedimento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarProcedimento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarProcedimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InserirTipoConsulta_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirTipoConsulta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InserirTipoConsulta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirTipoConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InativarTipoConsulta_InputMessage">
+    <wsdl:part name="parameters" element="tns:InativarTipoConsulta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InativarTipoConsulta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InativarTipoConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarTipoConsulta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTipoConsulta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarTipoConsulta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTipoConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CadastrarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CadastrarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CadastrarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AlterarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AlterarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarUsuarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarUsuarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="AgendarAgendamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AgendarAgendamento" message="tns:IService1_AgendarAgendamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AgendarAgendamentoResponse" message="tns:IService1_AgendarAgendamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemarcarAgendamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RemarcarAgendamento" message="tns:IService1_RemarcarAgendamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RemarcarAgendamentoResponse" message="tns:IService1_RemarcarAgendamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirAgendamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ExcluirAgendamento" message="tns:IService1_ExcluirAgendamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ExcluirAgendamentoResponse" message="tns:IService1_ExcluirAgendamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaAgendamentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListaAgendamentos" message="tns:IService1_ListaAgendamentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListaAgendamentosResponse" message="tns:IService1_ListaAgendamentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GerarAtendimento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GerarAtendimento" message="tns:IService1_GerarAtendimento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GerarAtendimentoResponse" message="tns:IService1_GerarAtendimento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirAtendimento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ExcluirAtendimento" message="tns:IService1_ExcluirAtendimento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ExcluirAtendimentoResponse" message="tns:IService1_ExcluirAtendimento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarAtendimento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AtualizarAtendimento" message="tns:IService1_AtualizarAtendimento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AtualizarAtendimentoResponse" message="tns:IService1_AtualizarAtendimento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarAtendimentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarAtendimentos" message="tns:IService1_ListarAtendimentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarAtendimentosResponse" message="tns:IService1_ListarAtendimentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarConvenio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CadastrarConvenio" message="tns:IService1_CadastrarConvenio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CadastrarConvenioResponse" message="tns:IService1_CadastrarConvenio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InativarConvenio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InativarConvenio" message="tns:IService1_InativarConvenio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InativarConvenioResponse" message="tns:IService1_InativarConvenio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarConvenios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarConvenios" message="tns:IService1_ListarConvenios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarConveniosResponse" message="tns:IService1_ListarConvenios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarPaciente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CadastrarPaciente" message="tns:IService1_CadastrarPaciente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CadastrarPacienteResponse" message="tns:IService1_CadastrarPaciente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarPaciente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AlterarPaciente" message="tns:IService1_AlterarPaciente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AlterarPacienteResponse" message="tns:IService1_AlterarPaciente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaPaciente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListaPaciente" message="tns:IService1_ListaPaciente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListaPacienteResponse" message="tns:IService1_ListaPaciente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarPrestador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CadastrarPrestador" message="tns:IService1_CadastrarPrestador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CadastrarPrestadorResponse" message="tns:IService1_CadastrarPrestador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InativarPrestador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InativarPrestador" message="tns:IService1_InativarPrestador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InativarPrestadorResponse" message="tns:IService1_InativarPrestador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarPrestador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AtualizarPrestador" message="tns:IService1_AtualizarPrestador_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AtualizarPrestadorResponse" message="tns:IService1_AtualizarPrestador_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaPrestadores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListaPrestadores" message="tns:IService1_ListaPrestadores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListaPrestadoresResponse" message="tns:IService1_ListaPrestadores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdicionarProcedimento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AdicionarProcedimento" message="tns:IService1_AdicionarProcedimento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AdicionarProcedimentoResponse" message="tns:IService1_AdicionarProcedimento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AtuaizarProcedimento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AtuaizarProcedimento" message="tns:IService1_AtuaizarProcedimento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AtuaizarProcedimentoResponse" message="tns:IService1_AtuaizarProcedimento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarProcedimento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarProcedimento" message="tns:IService1_ListarProcedimento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarProcedimentoResponse" message="tns:IService1_ListarProcedimento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirTipoConsulta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InserirTipoConsulta" message="tns:IService1_InserirTipoConsulta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InserirTipoConsultaResponse" message="tns:IService1_InserirTipoConsulta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InativarTipoConsulta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InativarTipoConsulta" message="tns:IService1_InativarTipoConsulta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InativarTipoConsultaResponse" message="tns:IService1_InativarTipoConsulta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarTipoConsulta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarTipoConsulta" message="tns:IService1_ListarTipoConsulta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarTipoConsultaResponse" message="tns:IService1_ListarTipoConsulta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CadastrarUsuario" message="tns:IService1_CadastrarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CadastrarUsuarioResponse" message="tns:IService1_CadastrarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AlterarUsuario" message="tns:IService1_AlterarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AlterarUsuarioResponse" message="tns:IService1_AlterarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarUsuarios" message="tns:IService1_ListarUsuarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarUsuariosResponse" message="tns:IService1_ListarUsuarios_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AgendarAgendamento">
+      <soap:operation soapAction="http://tempuri.org/IService1/AgendarAgendamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemarcarAgendamento">
+      <soap:operation soapAction="http://tempuri.org/IService1/RemarcarAgendamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirAgendamento">
+      <soap:operation soapAction="http://tempuri.org/IService1/ExcluirAgendamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaAgendamentos">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListaAgendamentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GerarAtendimento">
+      <soap:operation soapAction="http://tempuri.org/IService1/GerarAtendimento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirAtendimento">
+      <soap:operation soapAction="http://tempuri.org/IService1/ExcluirAtendimento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarAtendimento">
+      <soap:operation soapAction="http://tempuri.org/IService1/AtualizarAtendimento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarAtendimentos">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarAtendimentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarConvenio">
+      <soap:operation soapAction="http://tempuri.org/IService1/CadastrarConvenio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InativarConvenio">
+      <soap:operation soapAction="http://tempuri.org/IService1/InativarConvenio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarConvenios">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarConvenios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarPaciente">
+      <soap:operation soapAction="http://tempuri.org/IService1/CadastrarPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarPaciente">
+      <soap:operation soapAction="http://tempuri.org/IService1/AlterarPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaPaciente">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListaPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarPrestador">
+      <soap:operation soapAction="http://tempuri.org/IService1/CadastrarPrestador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InativarPrestador">
+      <soap:operation soapAction="http://tempuri.org/IService1/InativarPrestador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarPrestador">
+      <soap:operation soapAction="http://tempuri.org/IService1/AtualizarPrestador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaPrestadores">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListaPrestadores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdicionarProcedimento">
+      <soap:operation soapAction="http://tempuri.org/IService1/AdicionarProcedimento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtuaizarProcedimento">
+      <soap:operation soapAction="http://tempuri.org/IService1/AtuaizarProcedimento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarProcedimento">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarProcedimento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirTipoConsulta">
+      <soap:operation soapAction="http://tempuri.org/IService1/InserirTipoConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InativarTipoConsulta">
+      <soap:operation soapAction="http://tempuri.org/IService1/InativarTipoConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTipoConsulta">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarTipoConsulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CadastrarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IService1/CadastrarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IService1/AlterarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuarios">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:57569/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

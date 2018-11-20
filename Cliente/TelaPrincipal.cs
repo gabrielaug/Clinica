@@ -21,5 +21,11 @@ namespace Cliente
         {
 
         }
+
+        private void prestadorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaPrestador tela = new TelaPrestador();
+            tela.Show();
+        }
     }
 }

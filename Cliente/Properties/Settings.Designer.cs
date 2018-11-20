@@ -32,5 +32,15 @@ namespace Cliente.Properties {
                 return ((string)(this["Cliente_localhost_Service1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:57569/Service1.svc")]
+        public string Cliente_localhost1_Service1 {
+            get {
+                return ((string)(this["Cliente_localhost1_Service1"]));
+            }
+        }
     }
 }
