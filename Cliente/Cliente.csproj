@@ -77,11 +77,18 @@
     <Compile Include="TelaAgendamento.Designer.cs">
       <DependentUpon>TelaAgendamento.cs</DependentUpon>
     </Compile>
+	
     <Compile Include="TelaAtendimento.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TelaAtendimento.Designer.cs">
       <DependentUpon>TelaAtendimento.cs</DependentUpon>
+    </Compile>
+	<Compile Include="TelaPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaPaciente.Designer.cs">
+      <DependentUpon>TelaPaciente.cs</DependentUpon>
     </Compile>
     <Compile Include="TelaPrestador.cs">
       <SubType>Form</SubType>
@@ -106,6 +113,9 @@
     </Compile>
     <EmbeddedResource Include="TelaAgendamento.resx">
       <DependentUpon>TelaAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
+	<EmbeddedResource Include="TelaPaciente.resx">
+      <DependentUpon>TelaPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaAtendimento.resx">
       <DependentUpon>TelaAtendimento.cs</DependentUpon>
