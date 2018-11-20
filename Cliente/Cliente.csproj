@@ -52,6 +52,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,14 +79,13 @@
     <Compile Include="TelaAgendamento.Designer.cs">
       <DependentUpon>TelaAgendamento.cs</DependentUpon>
     </Compile>
-	
     <Compile Include="TelaAtendimento.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TelaAtendimento.Designer.cs">
       <DependentUpon>TelaAtendimento.cs</DependentUpon>
     </Compile>
-	<Compile Include="TelaPaciente.cs">
+    <Compile Include="TelaPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TelaPaciente.Designer.cs">
@@ -102,6 +103,11 @@
     <Compile Include="TelaPrincipal.Designer.cs">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Web References\localhost1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -114,7 +120,7 @@
     <EmbeddedResource Include="TelaAgendamento.resx">
       <DependentUpon>TelaAgendamento.cs</DependentUpon>
     </EmbeddedResource>
-	<EmbeddedResource Include="TelaPaciente.resx">
+    <EmbeddedResource Include="TelaPaciente.resx">
       <DependentUpon>TelaPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaAtendimento.resx">
@@ -135,6 +141,44 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Web References\localhost1\Agendamento.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\localhost1\Atendimento.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\localhost1\Convenio.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\localhost1\Paciente.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\localhost1\Prestador.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\localhost1\Procedimento.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\localhost1\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\localhost1\Service1.wsdl" />
+    <None Include="Web References\localhost1\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\localhost1\Service10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\localhost1\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\localhost1\TipoConsulta.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\localhost1\Usuario.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -153,6 +197,25 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:57569/Service1.svc">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\localhost1\</RelPath>
+      <UpdateFromURL>http://localhost:57569/Service1.svc</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Cliente_localhost1_Service1</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\localhost1\Service1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
